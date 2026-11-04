@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cx2 Homebuyers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sell your house fast in Houston. Get a fair, no-obligation cash offer from a local, owner-run company. No repairs, no commissions, no closing costs, and you pick the closing date.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&display=swap">
+<style>
+/* Layout: the proven Houston cash-buyer landing page (navy hero with offer form, trust bar, outbound reassurance, owner, situations, 4-step timeline, comparison, areas, FAQ, closing CTA). Single light look like the reference sites; navy for trust, orange for every action. */
+:root{
+  --navy:#0E2A47; --navy-2:#173B61; --navy-3:#24507F;
+  --orange:#D9560B; --orange-hover:#C24A06; --orange-soft:#FDEBDD;
+  --bg:#FFFFFF; --bg-2:#F2F6FA; --ink:#13243A; --muted:#4F6177; --line:#DCE4EC;
+  --green:#178A4E; --red:#B4382F; --on-dark:#FFFFFF; --on-dark-muted:#BCCBDB;
+  --font:"Archivo","Arial Narrow",Arial,Helvetica,sans-serif;
+  --r:12px; --r-s:8px;
+  --shadow:0 20px 50px -28px rgba(14,42,71,.45);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17.5px;line-height:1.6;font-variation-settings:"wdth" 100}
+img{max-width:100%;display:block}
+a{color:var(--navy-3)}
+h1,h2,h3{margin:0;line-height:1.08;text-wrap:balance;font-weight:800;letter-spacing:-.015em}
+h1{font-size:clamp(2.4rem,5.4vw,3.75rem);font-variation-settings:"wdth" 86}
+h2{font-size:clamp(1.9rem,4vw,2.75rem);font-variation-settings:"wdth" 90}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:0}
+p{margin:0}
+.i{width:1.25em;height:1.25em;flex:none}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.sec{padding-block:clamp(60px,8vw,104px)}
+.sec.tint{background:var(--bg-2)}
+.sec-head{display:grid;gap:14px;max-width:760px;margin-bottom:clamp(32px,4vw,48px)}
+.sec-head.center{margin-inline:auto;text-align:center;justify-items:center}
+.sec-head p{font-size:1.12rem;color:var(--muted)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.ph{background:#FFF4D6;outline:1px dashed #C89211;border-radius:4px;padding:0 .25em;color:#5A4300!important}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;font-size:1.08rem;letter-spacing:.005em;padding:16px 26px;border-radius:var(--r-s);border:0;background:var(--orange);color:#fff;cursor:pointer;text-decoration:none;transition:background .15s}
+.btn:hover{background:var(--orange-hover)}
+.btn.navy{background:var(--navy)}
+.btn.navy:hover{background:var(--navy-2)}
+.btn.line{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
+
+/* preview bar */
+.preview{background:#FFE7A3;color:#3D2E00;font-size:.85rem;font-weight:600}
+.preview .wrap{padding-block:8px}
+
+/* top bar + header */
+.topbar{background:var(--navy);color:var(--on-dark-muted);font-size:.9rem}
+.topbar .wrap{display:flex;justify-content:space-between;gap:6px 20px;flex-wrap:wrap;padding-block:8px}
+.topbar a{color:#fff;font-weight:700;text-decoration:none}
+.topbar span{display:inline-flex;align-items:center;gap:8px}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:#fff;box-shadow:0 1px 0 var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#fff;z-index:41}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy)}
+.logo-mark{width:44px;height:44px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;position:relative;overflow:hidden}
+.logo-mark svg{width:24px;height:24px}
+.logo-mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--orange)}
+.logo b{display:block;font-size:1.3rem;font-weight:900;letter-spacing:-.02em;line-height:1;font-variation-settings:"wdth" 92}
+.logo small{display:block;font-size:.78rem;color:var(--muted);font-weight:600;margin-top:3px}
+nav.main{display:flex;gap:26px}
+nav.main a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.98rem}
+nav.main a:hover{color:var(--orange)}
+.head-cta{display:flex;align-items:center;gap:18px}
+.head-phone{display:flex;align-items:center;gap:8px;color:var(--navy);font-weight:800;text-decoration:none;font-size:1.1rem}
+.head-phone .i{color:var(--orange)}
+.head-cta .btn{padding:12px 18px;font-size:.98rem}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(14,42,71,.96) 0%,rgba(14,42,71,.88) 48%,rgba(14,42,71,.55) 100%)}
+.hero-pattern{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(var(--on-dark) 1px,transparent 1px),linear-gradient(90deg,var(--on-dark) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(100deg,transparent 30%,#000 100%);-webkit-mask-image:linear-gradient(100deg,transparent 30%,#000 100%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(30px,5vw,64px);align-items:center;padding-block:clamp(44px,7vw,88px)}
+.hero-copy{display:grid;gap:24px}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;justify-self:start;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 14px 6px 10px;font-weight:600;font-size:.92rem;color:#fff}
+.hero-kicker .i{color:#FF9A5A}
+.hero h1 span.line{display:block}
+.hero .sub{font-size:1.2rem;color:var(--on-dark-muted);max-width:56ch}
+.checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px}
+.checks li{display:flex;gap:10px;align-items:center;font-weight:600}
+.checks .tick{width:24px;height:24px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:none}
+.checks .tick svg{width:14px;height:14px;color:#fff;stroke-width:3}
+
+.offer-card{background:#fff;color:var(--ink);border-radius:var(--r);box-shadow:0 30px 70px -30px rgba(0,0,0,.6);overflow:hidden}
+.offer-card .top{background:var(--orange);color:#fff;padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.offer-card .top strong{font-size:1.25rem;font-weight:800}
+.offer-card .top span{font-size:.85rem;font-weight:600;opacity:.95;white-space:nowrap}
+.offer-card form{padding:24px 26px 26px;display:grid;gap:14px}
+.step{display:grid;gap:14px}
+.progress{display:flex;gap:6px}
+.progress i{flex:1;height:5px;border-radius:3px;background:var(--line)}
+.progress i.on{background:var(--orange)}
+label{display:grid;gap:6px;font-weight:700;font-size:.92rem}
+input,select{font:inherit;font-size:1rem;width:100%;min-width:0;padding:13px 14px;border:1.5px solid var(--line);border-radius:var(--r-s);background:#fff;color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 0 3px rgba(36,80,127,.18)}
+.addr{position:relative}
+.addr .i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.addr input{padding-left:44px;font-size:1.05rem;padding-block:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.78rem;line-height:1.45;color:var(--muted)}
+.consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--navy)}
+.form-foot{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;color:var(--muted)}
+.form-foot span{display:inline-flex;align-items:center;gap:6px}
+.form-foot .i{width:16px;height:16px;color:var(--green)}
+.back{background:none;border:0;font:inherit;font-size:.9rem;color:var(--muted);text-decoration:underline;cursor:pointer;justify-self:start;padding:0}
+.or-call{border-top:1px solid var(--line);padding:14px 26px;font-size:.95rem;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.or-call a{color:var(--navy);font-weight:800;text-decoration:none}
+.thanks{padding:28px 26px;display:grid;gap:10px}
+.thanks .big{display:flex;gap:10px;align-items:center;font-size:1.3rem;font-weight:800;color:var(--green)}
+
+/* trust bar */
+.trustbar{background:#fff;border-bottom:1px solid var(--line)}
+.trustbar ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.trustbar li{display:flex;gap:14px;align-items:center;padding:24px 18px;border-left:1px solid var(--line)}
+.trustbar li:first-child{border-left:0;padding-left:0}
+.trustbar .ic{width:48px;height:48px;border-radius:50%;background:var(--orange-soft);color:var(--orange);display:grid;place-items:center;flex:none}
+.trustbar b{display:block;font-size:1.05rem;line-height:1.2}
+.trustbar small{color:var(--muted);font-size:.88rem}
+
+/* photo slots */
+.photo{position:relative;border-radius:var(--r);overflow:hidden;background:var(--bg-2);aspect-ratio:4/3;max-width:100%}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo.empty{display:grid;place-items:center;text-align:center;background:repeating-linear-gradient(135deg,#E9EFF5 0 14px,#E2E9F0 14px 28px);color:var(--muted);font-size:.9rem;font-weight:600;padding:20px}
+.photo.empty .i{width:36px;height:36px;margin:0 auto 8px;color:var(--navy-3)}
+
+/* outbound */
+.ob{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(30px,5vw,64px);align-items:start}
+.ob-badge{display:inline-flex;align-items:center;gap:8px;justify-self:start;background:var(--orange-soft);color:var(--orange-hover);font-weight:700;font-size:.92rem;padding:7px 14px;border-radius:999px}
+.ob-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ob-cards div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:start}
+.ob-cards .ic{width:44px;height:44px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center}
+.ob-cards p{color:var(--muted);font-size:.97rem}
+
+/* owner */
+.owner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,72px);align-items:center}
+.owner .photo{aspect-ratio:4/5}
+.owner-copy{display:grid;gap:18px}
+.owner-copy p{font-size:1.1rem;color:var(--muted);max-width:60ch}
+.owner-copy .quote{font-size:1.35rem;line-height:1.45;color:var(--ink);font-weight:600;border-left:4px solid var(--orange);padding-left:18px}
+.sig{display:flex;align-items:center;gap:14px}
+.sig b{font-size:1.15rem}
+.sig small{display:block;color:var(--muted)}
+.stat{display:inline-flex;align-items:baseline;gap:10px;background:var(--bg-2);border-radius:var(--r-s);padding:12px 18px;justify-self:start}
+.stat b{font-size:2rem;color:var(--navy);font-weight:900}
+
+/* situations */
+.sits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.sit{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;display:grid;gap:10px;align-content:start}
+.sit .ic{width:52px;height:52px;border-radius:12px;background:var(--orange-soft);color:var(--orange);display:grid;place-items:center}
+.sit .ic svg{width:26px;height:26px}
+.sit p{color:var(--muted);font-size:.95rem}
+.center-cta{display:flex;justify-content:center;margin-top:36px}
+
+/* timeline */
+.timeline{list-style:none;margin:0 auto;padding:0;max-width:860px;display:grid;gap:0;counter-reset:st}
+.timeline li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:22px;position:relative;padding-bottom:36px;counter-increment:st}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:35px;top:72px;bottom:0;width:2px;background:var(--line)}
+.timeline li:last-child::before{display:none}
+.timeline .num{width:72px;height:72px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;position:relative}
+.timeline .num svg{width:30px;height:30px}
+.timeline .num::after{content:counter(st);position:absolute;top:-4px;right:-4px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.9rem;display:grid;place-items:center;border:3px solid #fff}
+.timeline .body{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;display:grid;gap:8px}
+.timeline .when{font-size:.88rem;font-weight:700;color:var(--orange-hover)}
+.timeline p{color:var(--muted)}
+.tip{background:var(--bg-2);border-radius:var(--r-s);padding:10px 14px;font-size:.92rem;color:var(--ink)}
+.tip b{color:var(--navy)}
+
+/* compare */
+.compare{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;max-width:980px;margin:0 auto}
+.col{border-radius:var(--r);padding:28px;display:grid;gap:4px;align-content:start}
+.col.us{background:var(--navy);color:#fff;box-shadow:var(--shadow)}
+.col.them{background:#fff;border:1px solid var(--line)}
+.col h3{font-size:1.4rem;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.col ul{list-style:none;margin:0;padding:0;display:grid}
+.col li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;padding:12px 0;border-top:1px solid rgba(127,147,170,.25)}
+.col li .i{width:22px;height:22px;margin-top:2px}
+.col.us li .i{color:#5BD08F}
+.col.them li .i{color:var(--red)}
+.col li b{display:block;font-size:.85rem;font-weight:700;opacity:.75}
+.col.us li b{color:var(--on-dark-muted);opacity:1}
+.compare-note{max-width:980px;margin:18px auto 0;color:var(--muted);font-size:.92rem}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.review{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:12px;align-content:start}
+.stars{display:flex;gap:2px;color:#F5A524}
+.stars svg{width:18px;height:18px;fill:currentColor;stroke:none}
+.review figcaption{font-weight:700}
+.review figcaption small{display:block;font-weight:500;color:var(--muted)}
+
+/* areas */
+.areas-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,64px);align-items:start}
+.areas{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.areas li{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:600;font-size:.95rem}
+.areas .i{width:16px;height:16px;color:var(--orange)}
+
+/* faq */
+.faq{max-width:860px;margin:0 auto;display:grid;gap:12px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:700;font-size:1.08rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .i{color:var(--orange);transition:transform .2s}
+.faq details[open] summary .i{transform:rotate(180deg)}
+.faq details p{padding-bottom:20px;color:var(--muted);max-width:70ch}
+
+/* final cta */
+.final{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:var(--navy-2)}
+.final .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,60px);align-items:center;padding-block:clamp(56px,7vw,88px)}
+.final p{color:var(--on-dark-muted);font-size:1.12rem;margin-top:12px}
+.final form{display:flex;gap:10px;background:#fff;padding:8px;border-radius:var(--r)}
+.final form .addr{flex:1}
+.final form input{border:0;padding-block:14px}
+.final .call-line{margin-top:14px;color:var(--on-dark-muted)}
+.final .call-line a{color:#fff;font-weight:800;text-decoration:none}
+
+/* footer */
+footer{background:#0A1F36;color:var(--on-dark-muted);font-size:.9rem}
+footer .wrap{padding-block:48px 36px;display:grid;gap:30px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
+footer .logo{color:#fff}
+footer .logo small{color:var(--on-dark-muted)}
+footer h4{margin:0 0 10px;color:#fff;font-size:1rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{color:var(--on-dark-muted);text-decoration:none}
+footer a:hover{color:#fff}
+footer .contact li{display:flex;gap:8px;align-items:center}
+footer .contact .i{width:16px;height:16px;color:#FF9A5A}
+.legal{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:grid;gap:12px;font-size:.82rem;line-height:1.6}
+.legal details summary{cursor:pointer;color:#fff;font-weight:600}
+.legal details p{margin-top:8px}
+
+/* mobile bar */
+.mbar{display:none}
+
+@media (max-width:980px){
+  .hero .wrap,.ob,.owner,.areas-wrap,.final .wrap{grid-template-columns:1fr}
+  nav.main{display:none}
+  .sits{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trustbar ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trustbar li{border-left:0;padding-left:0}
+  .reviews{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .owner .photo{max-width:420px}
+}
+@media (max-width:640px){
+  body{font-size:16.5px;padding-bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+  .head-cta .btn,.topbar .hours{display:none}
+  .head-phone span.num{display:none}
+  .head-phone{width:44px;height:44px;border-radius:50%;background:var(--orange-soft);justify-content:center}
+  .checks,.row2,.ob-cards,.sits,.compare,.reviews,.foot-grid{grid-template-columns:1fr}
+  .trustbar ul{grid-template-columns:1fr}
+  .trustbar li{padding:14px 0;border-top:1px solid var(--line)}
+  .trustbar li:first-child{border-top:0}
+  .timeline li{grid-template-columns:52px minmax(0,1fr);gap:14px}
+  .timeline .num{width:52px;height:52px}
+  .timeline .num svg{width:22px;height:22px}
+  .timeline li::before{left:25px;top:52px}
+  .final form{flex-direction:column}
+  .offer-card .top span{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;box-shadow:0 -6px 20px -10px rgba(14,42,71,.4);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
+  .mbar .btn{padding:13px 10px;font-size:1rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head><body>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYToyMmRlOTVjOS01OTMzLTQ3YjktYTE3YS03ZWVmM2M3ZGY3ZjUAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaGOSHFpXiMjwyN1tVVsyNVUAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoyZjYyNmFiMC0zOWMyLTRjMDYtOTZhMS04NDUyMDUwZWYxZGZscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoJAiIV9xJ0ntY4km6vgp0hAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggl9JnDAQefPT7qM2cbmQz0mbjFa+SVBQXyIUZeIuLuGqkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaKUYWD8ikJ0rUABtq6eMSGQAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCDVOwHsVYMijrKqINXZnCpD/htuaATrIbYb4AE/WVkdLGRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiPZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjIyZGU5NWM5LTU5MzMtNDdiOS1hMTdhLTdlZWYzYzdkZjdmNS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmI3YmEyYWYzLWFiY2ItNDMyMi04NjJlLTJmNjNmMjBlOWEyM3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCX0mcMBB589PuozZxuZDPSZuMVr5JUFBfIhRl4i4u4aqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggd2E3kT1lgR3sl9FItXLOYhmdx5DlOi+n+wMHVr3txB+iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggN+UoLhfUIXVgkQmXOs4OY4Sa0UKOb/mC/qygY7+4BP10Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQN3zrEYY511+hjsVdfXjQnRvOMighAEwsjuK0/DwVq46CoWuFdlWm9t3CO0q5kdKH7mdo3JzN4ztfu/R6uqYXK8=</c2pa:manifest></metadata>
+<symbol id="i-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></symbol>
+<symbol id="i-calendar-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /> <path d="m9 16 2 2 4-4" /></symbol>
+<symbol id="i-hand-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" /> <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" /> <path d="m2 16 6 6" /> <circle cx="16" cy="9" r="2.9" /> <circle cx="6" cy="5" r="3" /></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol>
+<symbol id="i-key-round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /> <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></symbol>
+<symbol id="i-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3" /> <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" /> <path d="m21 3 1 11h-2" /> <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" /> <path d="M3 4h8" /></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol>
+<symbol id="i-badge-dollar-sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /> <path d="M12 18V6" /></symbol>
+<symbol id="i-hammer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></symbol>
+<symbol id="i-heart-crack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /> <path d="m12 13-1-1 2-2-3-3 2-2" /></symbol>
+<symbol id="i-users-round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0" /> <circle cx="10" cy="8" r="5" /> <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" /></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol>
+<symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></symbol>
+<symbol id="i-briefcase-business" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12h.01" /> <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /> <path d="M22 13a18.15 18.15 0 0 1-20 0" /> <rect width="20" height="14" x="2" y="6" rx="2" /></symbol>
+<symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /></symbol>
+<symbol id="i-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22" /> <line x1="6" x2="6" y1="18" y2="11" /> <line x1="10" x2="10" y1="18" y2="11" /> <line x1="14" x2="14" y1="18" y2="11" /> <line x1="18" x2="18" y1="18" y2="11" /> <polygon points="12 2 20 7 4 7" /></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></symbol>
+<symbol id="i-droplets" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" /> <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" /></symbol>
+<symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol>
+<symbol id="i-circle-check-big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" /> <path d="m9 11 3 3L22 4" /></symbol>
+<symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /> <circle cx="9" cy="9" r="2" /> <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></symbol>
+<symbol id="i-user-round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5" /> <path d="M20 21a8 8 0 0 0-16 0" /></symbol>
+<symbol id="i-search-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4" /> <circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></symbol>
+<symbol id="i-ban" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="m4.9 4.9 14.2 14.2" /></symbol>
+</svg>
+
+<div class="preview" id="previewBar"><div class="wrap">Preview: yellow highlights and striped boxes are where your real name, phone, photos and details go. The form doesn't send anything yet.</div></div>
+
+<div class="topbar"><div class="wrap">
+  <span><svg class="i"><use href="#i-map-pin"/></svg>Locally owned in Houston, Texas</span>
+  <span class="hours"><svg class="i"><use href="#i-clock"/></svg><span data-fill="hours"></span></span>
+</div></div>
+
+<header class="site"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Cx2 Homebuyers home">
+    <span class="logo-mark"><svg><use href="#i-house"/></svg></span>
+    <span><b>Cx2 Homebuyers</b><small>Houston cash home buyers</small></span>
+  </a>
+  <nav class="main" aria-label="Main">
+    <a href="#how">How it works</a>
+    <a href="#about">About us</a>
+    <a href="#compare">Compare</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="head-cta">
+    <a class="head-phone" data-tel href="#offer" aria-label="Call us"><svg class="i"><use href="#i-phone"/></svg><span class="num" data-fill="phone"></span></a>
+    <a class="btn" href="#offer">Get my cash offer</a>
+  </div>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="hero-kicker"><svg class="i"><use href="#i-house"/></svg>Houston's local, owner-run home buyer</span>
+      <h1><span class="line">Sell your house fast</span><span class="line">in Houston.</span></h1>
+      <p class="sub">Get a fair cash offer for your house as-is. No repairs, no agent commissions, no closing costs, and you choose the closing date.</p>
+      <ul class="checks">
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Any condition, any situation</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>$0 commissions or fees</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>We pay closing costs</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Close on your timeline</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>No cleaning or showings</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>No pressure, no obligation</li>
+      </ul>
+    </div>
+
+    <div class="offer-card" id="offer">
+      <div class="top"><strong>Get your cash offer</strong><span>Takes about 2 minutes</span></div>
+      <form name="offer" method="POST" data-netlify="true" netlify-honeypot="company" id="offerForm" novalidate>
+        <input type="hidden" name="form-name" value="offer">
+        <p hidden><label>Leave this empty<input name="company" id="f-company" tabindex="-1" autocomplete="off"></label></p>
+        <div class="progress" aria-hidden="true"><i class="on"></i><i id="p2"></i></div>
+        <div class="step" id="step1">
+          <label for="f-address">Property address</label>
+          <div class="addr"><svg class="i"><use href="#i-map-pin"/></svg><input id="f-address" name="address" autocomplete="street-address" required placeholder="Enter your property address"></div>
+          <button class="btn" type="button" id="next">Get my cash offer</button>
+        </div>
+        <div class="step" id="step2" hidden>
+          <div class="row2">
+            <label>Full name<input id="f-name" name="name" autocomplete="name"></label>
+            <label>Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
+          </div>
+          <label>Email (optional)<input id="f-email" name="email" type="email" autocomplete="email"></label>
+          <div class="row2">
+            <label>When do you want to sell?
+              <select id="f-timeline" name="timeline"><option value="">Choose one</option><option>As soon as possible</option><option>Within 30 days</option><option>1 to 3 months</option><option>Just exploring</option></select>
+            </label>
+            <label>House condition
+              <select id="f-condition" name="condition"><option value="">Choose one</option><option>Move-in ready</option><option>Needs some work</option><option>Needs major repairs</option><option>Not sure</option></select>
+            </label>
+          </div>
+          <label class="consent"><input type="checkbox" id="f-sms" name="sms_consent" value="yes"><span>Optional: Cx2 Homebuyers may text me about my property at this number. Message frequency varies. Msg and data rates may apply. Reply STOP to opt out. Consent is not required to get an offer.</span></label>
+          <button class="btn" type="submit">Send my offer request</button>
+          <button class="back" type="button" id="back">Back</button>
+        </div>
+        <div class="form-foot">
+          <span><svg class="i"><use href="#i-circle-check-big"/></svg>No obligation</span>
+          <span><svg class="i"><use href="#i-shield-check"/></svg>Your info is never sold</span>
+        </div>
+      </form>
+      <div class="thanks" id="thanks" hidden>
+        <p class="big"><svg class="i"><use href="#i-circle-check-big"/></svg>Request received</p>
+        <p>Thank you. <span data-fill="owner"></span> will call you within one business day. If it's urgent, call <span data-fill="phone"></span>.</p>
+      </div>
+      <div class="or-call"><svg class="i" style="color:var(--orange)"><use href="#i-phone"/></svg>Prefer to talk? Call or text <a data-tel data-fill="phone" href="#offer"></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="trustbar" aria-label="Why sellers choose us"><div class="wrap"><ul>
+  <li><span class="ic"><svg class="i"><use href="#i-hand-coins"/></svg></span><span><b>$0 commissions</b><small>And no closing costs</small></span></li>
+  <li><span class="ic"><svg class="i"><use href="#i-wrench"/></svg></span><span><b>No repairs</b><small>Sell it exactly as it is</small></span></li>
+  <li><span class="ic"><svg class="i"><use href="#i-calendar-check"/></svg></span><span><b>You pick the date</b><small>Close fast or take your time</small></span></li>
+  <li><span class="ic"><svg class="i"><use href="#i-landmark"/></svg></span><span><b>Local title company</b><small>Licensed, and handles the money</small></span></li>
+</ul></div></section>
+
+<section class="sec tint" id="contacted"><div class="wrap ob">
+  <div class="sec-head" style="margin-bottom:0">
+    <span class="ob-badge"><svg class="i"><use href="#i-phone"/></svg>Did we call you or send you a letter?</span>
+    <h2>Yes, that was us. Here's who we are.</h2>
+    <p>We reach out to Houston homeowners whose houses may be a fit for a quick, as-is sale. It's normal to want to check us out first, so here's what you should know.</p>
+    <a class="btn navy" data-tel href="#offer" style="justify-self:start"><svg class="i"><use href="#i-phone"/></svg>Call <span data-fill="phone"></span></a>
+  </div>
+  <div class="ob-cards">
+    <div><span class="ic"><svg class="i"><use href="#i-search-check"/></svg></span><h3>How we found you</h3><p>From public property records, like county appraisal district data, and data services that compile contact details from public sources.</p></div>
+    <div><span class="ic"><svg class="i"><use href="#i-ban"/></svg></span><h3>We never ask for money</h3><p>No fees, deposits, bank details or Social Security numbers. The title company handles all of that at closing.</p></div>
+    <div><span class="ic"><svg class="i"><use href="#i-shield-check"/></svg></span><h3>We're a real Texas company</h3><p>Cx2 Homebuyers LLC is registered in Texas, and every sale closes at a licensed Houston title company.</p></div>
+    <div><span class="ic"><svg class="i"><use href="#i-x"/></svg></span><h3>Want us to stop?</h3><p>Tell us on the phone or email <span data-fill="email"></span>, and we'll take you off our list right away.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="about"><div class="wrap owner">
+  <div class="photo" data-photo="ownerPhoto" data-label="Your photo: a friendly, well-lit picture of you"></div>
+  <div class="owner-copy">
+    <h2>Meet <span data-fill="owner"></span>, the owner</h2>
+    <p class="quote">"When you call, you talk to me. When we meet, it's me at your door."</p>
+    <p data-fill="story"></p>
+    <p>We're not a national call center, and we don't sell your information to other companies. We're a Houston business, and we treat every seller the way we'd want our own family treated.</p>
+    <div class="stat" id="dealStat" hidden><b data-fill="dealsClosed"></b><span>Houston homeowners helped so far</span></div>
+    <div class="sig"><span><b data-fill="owner"></b><small>Owner, Cx2 Homebuyers LLC</small></span></div>
+  </div>
+</div></section>
+
+<section class="sec tint" id="situations"><div class="wrap">
+  <div class="sec-head center"><h2>We buy houses in any situation</h2><p>Whatever you're going through, we've likely seen it before. There's no judgment here, just options.</p></div>
+  <div class="sits">
+    <div class="sit"><span class="ic"><svg><use href="#i-landmark"/></svg></span><h3>Facing foreclosure</h3><p>Behind on payments and need a way out before the sale date.</p></div>
+    <div class="sit"><span class="ic"><svg><use href="#i-key-round"/></svg></span><h3>Inherited a house</h3><p>Probate or a family home you don't want to manage or repair.</p></div>
+    <div class="sit"><span class="ic"><svg><use href="#i-hammer"/></svg></span><h3>Major repairs</h3><p>Foundation, roof, plumbing, or a house that needs everything.</p></div>
+    <div class="sit"><span class="ic"><svg><use href="#i-droplets"/></svg></span><h3>Flood or fire damage</h3><p>Storm, flood, fire or mold damage you can't take on.</p></div>
+    <div class="sit"><span class="ic"><svg><use href="#i-users-round"/></svg></span><h3>Tired landlord</h3><p>Problem tenants, vacancies, or rentals that cost more than they make.</p></div>
+    <div class="sit"><span class="ic"><svg><use href="#i-heart-crack"/></svg></span><h3>Divorce</h3><p>A quick, clean sale so everyone can move forward.</p></div>
+    <div class="sit"><span class="ic"><svg><use href="#i-briefcase-business"/></svg></span><h3>Relocating</h3><p>A new job or a move, and no time to list and wait.</p></div>
+    <div class="sit"><span class="ic"><svg><use href="#i-badge-dollar-sign"/></svg></span><h3>Back taxes or liens</h3><p>Past-due property taxes, liens or code violations.</p></div>
+  </div>
+  <div class="center-cta"><a class="btn" href="#offer">Get my cash offer</a></div>
+</div></section>
+
+<section class="sec" id="how"><div class="wrap">
+  <div class="sec-head center"><h2>How it works</h2><p>Four simple steps. You can stop at any point, with no cost and no obligation.</p></div>
+  <ol class="timeline">
+    <li><span class="num"><svg><use href="#i-phone"/></svg></span><div class="body"><span class="when">About 10 to 15 minutes</span><h3>Quick call</h3><p>Fill out the form or call us. We'll ask a few questions about the house and what you need, and set up a time to see it.</p></div></li>
+    <li><span class="num"><svg><use href="#i-house"/></svg></span><div class="body"><span class="when">At a time that works for you</span><h3>We see the house</h3><p>We walk through the house with you. No need to clean or fix anything, and family members are welcome.</p><p class="tip"><b>Good to know:</b> this is your chance to ask us anything. We'll explain exactly how the sale works.</p></div></li>
+    <li><span class="num"><svg><use href="#i-file-text"/></svg></span><div class="body"><span class="when" data-fill="offerSpeed"></span><h3>Get your written cash offer</h3><p>We give you a written, no-obligation offer and walk you through how we got the number. Take your time and talk it over with anyone you trust.</p></div></li>
+    <li><span class="num"><svg><use href="#i-key-round"/></svg></span><div class="body"><span class="when">On the date you choose</span><h3>Close and get paid</h3><p>A licensed Houston title company handles the paperwork and pays you at closing. In some cases we can close in as little as 2 days once title is clear, or later if you need time to move.</p></div></li>
+  </ol>
+</div></section>
+
+<section class="sec tint" id="compare"><div class="wrap">
+  <div class="sec-head center"><h2>Selling to us vs. listing with an agent</h2><p>Both are good options for different people. Here's an honest side-by-side.</p></div>
+  <div class="compare">
+    <div class="col us">
+      <h3><svg class="i"><use href="#i-house"/></svg>Cx2 Homebuyers</h3>
+      <ul>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Commissions</b>None</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Closing costs</b>Paid by the buyer</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Repairs and cleaning</b>None, sell it as-is</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Showings</b>One walk-through</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Financing</b>Cash buyer, no bank approval needed</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Closing date</b>You choose it</span></li>
+      </ul>
+    </div>
+    <div class="col them">
+      <h3>Listing with an agent</h3>
+      <ul>
+        <li><svg class="i"><use href="#i-x"/></svg><span><b>Commissions</b>Agent commissions, negotiated with your agent</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span><b>Closing costs</b>Sellers usually pay a share</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span><b>Repairs and cleaning</b>Often needed to sell or pass inspection</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span><b>Showings</b>Showings and open houses</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span><b>Financing</b>Most buyers need a loan, which can fall through</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span><b>Closing date</b>Depends on finding a buyer</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="compare-note">Cash offers are usually below full market value, in exchange for speed, certainty and buying as-is. If your house is in great shape and you're not in a hurry, listing may get you more, and we'll tell you if we think so.</p>
+</div></section>
+
+<section class="sec" id="reviews" hidden><div class="wrap">
+  <div class="sec-head center"><h2>What Houston sellers say</h2><p><a data-link="googleUrl" href="#">Read all of our reviews on Google</a></p></div>
+  <div class="reviews" id="reviewList"></div>
+</div></section>
+
+<section class="sec tint" id="areas"><div class="wrap areas-wrap">
+  <div class="sec-head" style="margin-bottom:0">
+    <h2>Areas we serve</h2>
+    <p>We buy houses across Greater Houston, within about 45 minutes of the city center. Don't see your area? Call us and ask.</p>
+  </div>
+  <ul class="areas" id="areaList"></ul>
+</div></section>
+
+<section class="sec" id="faq"><div class="wrap">
+  <div class="sec-head center"><h2>Frequently asked questions</h2></div>
+  <div class="faq">
+    <details><summary>Is Cx2 Homebuyers legit?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>Yes. Cx2 Homebuyers LLC is a registered Texas company based in Houston, and every sale closes at a licensed Texas title company that holds the money and handles the paperwork. We never ask you for upfront fees, deposits or bank details. You're welcome to have a family member, attorney or agent review our offer before you sign.</p></details>
+    <details><summary>How do you determine your offer?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>We look at what similar houses nearby have recently sold for, then account for the repairs your house needs and the costs of buying, fixing and reselling it. We'll walk you through the numbers when we give you the offer.</p></details>
+    <details><summary>Are there any fees or commissions?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>No. You don't pay any commissions or fees, and the buyer pays the normal closing costs.</p></details>
+    <details><summary>How fast can you close?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>It depends mostly on the title company clearing title. In some cases we can close in as little as 2 days once title is clear. If you need more time to move, you can pick a later date.</p></details>
+    <details><summary>Do I need to make repairs or clean the house?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>No. We buy houses as-is. Take what you want and leave the rest.</p></details>
+    <details><summary>Can I sell if I'm behind on payments or have liens?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>Often, yes. The title company pays off your mortgage and any liens from the sale proceeds. The sooner you reach out, the more options you'll have.</p></details>
+    <details><summary>Who actually buys my house?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>We sign a purchase contract with you, and in many cases we assign that contract to one of the local cash investors we work with, who closes at the title company. We're paid a fee for arranging the sale. Texas law requires us to tell you this in writing before you sign, and we'll walk you through it.</p></details>
+    <details><summary>Are you real estate agents?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>No. We're not licensed agents and we don't represent you. You're always free to have your own agent or attorney review anything we send.</p></details>
+    <details><summary>Am I obligated to accept your offer?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>Not at all. Our offers are free and come with no obligation. If it doesn't work for you, that's completely fine.</p></details>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <div>
+    <h2>Ready for your no-obligation cash offer?</h2>
+    <p>Enter your address to get started. It takes about 2 minutes.</p>
+  </div>
+  <div>
+    <form id="finalForm">
+      <div class="addr"><svg class="i"><use href="#i-map-pin"/></svg><input id="f-address-2" aria-label="Property address" autocomplete="street-address" placeholder="Enter your property address"></div>
+      <button class="btn" type="submit">Get my offer</button>
+    </form>
+    <p class="call-line">Or call or text <a data-tel data-fill="phone" href="#offer"></a></p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div style="display:grid;gap:14px;align-content:start">
+      <a class="logo" href="#top"><span class="logo-mark"><svg><use href="#i-house"/></svg></span><span><b>Cx2 Homebuyers</b><small>Houston cash home buyers</small></span></a>
+      <p>A local, owner-run company helping Houston homeowners sell houses as-is, on their timeline.</p>
+    </div>
+    <div><h4>Contact</h4><ul class="contact">
+      <li><svg class="i"><use href="#i-phone"/></svg><a data-tel data-fill="phone" href="#offer"></a></li>
+      <li><svg class="i"><use href="#i-mail"/></svg><span data-fill="email"></span></li>
+      <li><svg class="i"><use href="#i-clock"/></svg><span data-fill="hours"></span></li>
+      <li><svg class="i"><use href="#i-map-pin"/></svg>Serving Greater Houston, TX</li>
+    </ul></div>
+    <div><h4>Quick links</h4><ul>
+      <li><a href="#how">How it works</a></li><li><a href="#about">About us</a></li><li><a href="#areas">Areas we serve</a></li><li><a href="#faq">FAQ</a></li><li><a href="#privacy">Privacy policy</a></li>
+    </ul></div>
+  </div>
+  <div class="legal">
+    <p>Cx2 Homebuyers LLC is not a licensed real estate broker or agent and does not represent buyers or sellers. We contract to purchase real property and may sell or assign our contract or equitable interest to another buyer. As required by Texas law (Tex. Occ. Code &sect;1101.0045; Tex. Prop. Code &sect;5.0205), we disclose the nature of our interest in writing to the property owner before entering a contract and to any potential buyer. Offers are typically below full market value in exchange for speed, convenience and buying as-is. "Cash" means no bank financing is needed to buy; it does not guarantee closing, which depends on title and the contract terms. Nothing on this site is legal, tax or financial advice.</p>
+    <details id="privacy"><summary>Privacy policy</summary><p>We collect the information you give us (such as your name, phone, email and property address) only to respond to your request and discuss selling your property. We do not sell or rent your information. We share it only as needed to evaluate or complete a sale (for example, with a title company or a buyer we assign a contract to) or when the law requires it. We text you only if you gave consent, and you can reply STOP at any time. To have your information removed or to stop contact, email <span data-fill="email"></span> or call <span data-fill="phone"></span>.</p></details>
+    <p>&copy; <span id="yr">2026</span> Cx2 Homebuyers LLC. All rights reserved.</p>
+  </div>
+</div></footer>
+
+<div class="mbar">
+  <a class="btn navy" data-tel href="#offer"><svg class="i"><use href="#i-phone"/></svg>Call</a>
+  <a class="btn" href="#offer">Get my cash offer</a>
+</div>
+
+<script>
+/* ===== EDIT YOUR DETAILS HERE ===== */
+var SITE = {
+  live: true,                  // true on the real website so the form sends
+  owner: "",                   // your first name
+  phone: "",                   // e.g. "(832) 555-0123"
+  email: "",                   // e.g. "info@cx2homebuyers.com"
+  hours: "Mon to Sat, 9am to 7pm",
+  offerSpeed: "Usually within 24 hours of seeing the house",
+  story: "",                   // 2 to 3 true sentences about you
+  dealsClosed: "",             // e.g. "5" (real number only; hidden when blank)
+  ownerPhoto: "",              // e.g. "owner.jpg"
+  heroPhoto: "",               // e.g. "hero.jpg" (a Houston house you bought, or you at a closing)
+  googleUrl: "",               // your Google Business Profile link
+  domain: "",                  // e.g. "https://cx2homebuyers.com"
+  areas: ["Houston","Pasadena","Pearland","Missouri City","Sugar Land","Stafford","Bellaire","Katy","Cypress","Jersey Village","Spring","Humble","Atascocita","Kingwood","Baytown","Channelview","Deer Park","La Porte","League City","Friendswood","Webster","Clear Lake","Alvin","Manvel","Dickinson","Texas City","Richmond","Rosenberg","Tomball","The Woodlands"],
+  reviews: []                  // real Google reviews only, with permission: {name:"Maria G.", area:"Pasadena", text:"..."}
+};
+var PH={owner:"Your name",phone:"Your phone",email:"Your email",hours:"Your hours",offerSpeed:"How fast?",dealsClosed:"#",
+  story:"Your story: two or three true sentences about who you are, that you're from Houston, and why you started Cx2 Homebuyers."};
+(function(){
+  var $=function(s){return document.querySelectorAll(s);};
+  $("[data-fill]").forEach(function(el){var k=el.dataset.fill,v=SITE[k];
+    if(v){el.textContent=v;}else{el.textContent=PH[k]||k;el.classList.add("ph");}});
+  $("[data-tel]").forEach(function(el){if(SITE.phone)el.href="tel:"+SITE.phone.replace(/[^0-9+]/g,"");});
+  $("[data-link]").forEach(function(el){var v=SITE[el.dataset.link];if(v){el.href=v;el.target="_blank";el.rel="noopener";}});
+  $("[data-photo]").forEach(function(el){var v=SITE[el.dataset.photo];
+    if(v){var im=new Image();im.src=v;im.alt=el.dataset.alt||"Photo of "+(SITE.owner||"the owner");el.appendChild(im);}
+    else{el.classList.add("empty");el.innerHTML='<span><svg class="i"><use href="#i-image"/></svg>'+el.dataset.label+'</span>';}});
+  if(SITE.heroPhoto)document.getElementById("heroBg").style.backgroundImage="url('"+SITE.heroPhoto+"')";
+  if(SITE.dealsClosed)document.getElementById("dealStat").hidden=false;
+  var al=document.getElementById("areaList");
+  SITE.areas.forEach(function(a){var li=document.createElement("li");li.innerHTML='<svg class="i"><use href="#i-map-pin"/></svg>';li.appendChild(document.createTextNode(a));al.appendChild(li);});
+  if(SITE.reviews.length){var rl=document.getElementById("reviewList"),star='<svg><use href="#i-star"/></svg>';
+    SITE.reviews.forEach(function(r){var f=document.createElement("figure");f.className="review";f.style.margin="0";
+      f.innerHTML='<div class="stars" aria-label="5 out of 5 stars">'+star+star+star+star+star+'</div><blockquote style="margin:0"></blockquote><figcaption></figcaption>';
+      f.querySelector("blockquote").textContent="“"+r.text+"”";
+      f.querySelector("figcaption").innerHTML="";f.querySelector("figcaption").appendChild(document.createTextNode(r.name));
+      var sm=document.createElement("small");sm.textContent=(r.area?r.area+", ":"")+"Google review";f.querySelector("figcaption").appendChild(sm);
+      rl.appendChild(f);});
+    document.getElementById("reviews").hidden=false;}
+  document.getElementById("yr").textContent=new Date().getFullYear();
+  if(SITE.live)document.getElementById("previewBar").hidden=true;
+
+  var ld={"@context":"https://schema.org","@type":"LocalBusiness","name":"Cx2 Homebuyers LLC",
+    "description":"Local, owner-run Houston company that makes as-is cash offers on houses in Greater Houston.",
+    "areaServed":SITE.areas.map(function(a){return{"@type":"City","name":a+", TX"};})};
+  if(SITE.phone)ld.telephone=SITE.phone;if(SITE.email)ld.email=SITE.email;if(SITE.domain)ld.url=SITE.domain;
+  if(SITE.googleUrl)ld.sameAs=[SITE.googleUrl];if(SITE.owner)ld.founder={"@type":"Person","name":SITE.owner};
+  var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+
+  var f=document.getElementById("offerForm"),s1=document.getElementById("step1"),s2=document.getElementById("step2"),
+      t=document.getElementById("thanks"),addr=document.getElementById("f-address"),p2=document.getElementById("p2"),
+      name=document.getElementById("f-name"),phone=document.getElementById("f-phone");
+  function toStep2(){if(!addr.value.trim()){addr.required=true;addr.reportValidity();addr.focus();return;}
+    s1.hidden=true;s2.hidden=false;p2.classList.add("on");name.required=true;phone.required=true;name.focus();}
+  document.getElementById("next").addEventListener("click",toStep2);
+  document.getElementById("back").addEventListener("click",function(){s2.hidden=true;s1.hidden=false;p2.classList.remove("on");addr.focus();});
+  f.addEventListener("submit",function(e){e.preventDefault();
+    if(s2.hidden){toStep2();return;}
+    if(!name.value.trim()||!phone.value.trim()){(name.value.trim()?phone:name).reportValidity();return;}
+    if(!SITE.live){f.hidden=true;t.hidden=false;t.insertAdjacentHTML("afterbegin","<p><strong>Preview only: nothing was sent.</strong></p>");return;}
+    fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()})
+      .then(function(r){if(!r.ok)throw 0;f.hidden=true;t.hidden=false;})
+      .catch(function(){t.hidden=false;t.textContent="That didn't go through. Please call or text "+(SITE.phone||"us")+".";});});
+  document.getElementById("finalForm").addEventListener("submit",function(e){e.preventDefault();
+    addr.value=document.getElementById("f-address-2").value;document.getElementById("offer").scrollIntoView({behavior:"smooth",block:"center"});
+    if(addr.value.trim())toStep2();else addr.focus();});
+})();
+</script>
+
+</body></html>
