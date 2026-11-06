@@ -1,5 +1,13 @@
 <title>Cx2 Homebuyers</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#152F70">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cx2 Homebuyers | Sell Your House Fast in Houston">
+<meta property="og:description" content="Get a fair, no-obligation cash offer from a local, owner-run Houston company. No repairs, no commissions, no closing costs.">
+<meta property="og:image" content="https://cx2homebuyers.com/logo-512.png">
 <meta name="description" content="Sell your house fast in Houston. Get a fair, no-obligation cash offer from a local, owner-run company. No repairs, no commissions, no closing costs, and you pick the closing date.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7,13 +15,13 @@
 <style>
 /* Layout: the proven Houston cash-buyer landing page (navy hero with offer form, trust bar, outbound reassurance, owner, situations, 4-step timeline, comparison, areas, FAQ, closing CTA). Single light look like the reference sites; navy for trust, orange for every action. */
 :root{
-  --navy:#0E2A47; --navy-2:#173B61; --navy-3:#24507F;
+  --navy:#152F70; --navy-2:#1D3B86; --navy-3:#2C4F9E;
   --orange:#D9560B; --orange-hover:#C24A06; --orange-soft:#FDEBDD;
   --bg:#FFFFFF; --bg-2:#F2F6FA; --ink:#13243A; --muted:#4F6177; --line:#DCE4EC;
-  --green:#178A4E; --red:#B4382F; --on-dark:#FFFFFF; --on-dark-muted:#BCCBDB;
+  --green:#178A4E; --red:#B4382F; --on-dark:#FFFFFF; --on-dark-muted:#C3CEE8;
   --font:"Archivo","Arial Narrow",Arial,Helvetica,sans-serif;
   --r:12px; --r-s:8px;
-  --shadow:0 20px 50px -28px rgba(14,42,71,.45);
+  --shadow:0 20px 50px -28px rgba(21,47,112,.45);
   color-scheme:light;
 }
 *{box-sizing:border-box}
@@ -57,9 +65,9 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;backgrou
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#fff;z-index:41}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
 .logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy)}
-.logo-mark{width:44px;height:44px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;position:relative;overflow:hidden}
-.logo-mark svg{width:24px;height:24px}
-.logo-mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--orange)}
+.logo-mark{width:46px;height:46px;border-radius:10px;background:var(--navy);color:#fff;display:block;overflow:hidden;flex:none}
+.logo-mark svg{width:100%;height:100%;display:block}
+footer .logo-mark{background:#fff;color:var(--navy)}
 .logo b{display:block;font-size:1.3rem;font-weight:900;letter-spacing:-.02em;line-height:1;font-variation-settings:"wdth" 92}
 .logo small{display:block;font-size:.78rem;color:var(--muted);font-weight:600;margin-top:3px}
 nav.main{display:flex;gap:26px}
@@ -73,7 +81,7 @@ nav.main a:hover{color:var(--orange)}
 /* hero */
 .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(14,42,71,.96) 0%,rgba(14,42,71,.88) 48%,rgba(14,42,71,.55) 100%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(21,47,112,.96) 0%,rgba(21,47,112,.88) 48%,rgba(21,47,112,.55) 100%)}
 .hero-pattern{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(var(--on-dark) 1px,transparent 1px),linear-gradient(90deg,var(--on-dark) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(100deg,transparent 30%,#000 100%);-webkit-mask-image:linear-gradient(100deg,transparent 30%,#000 100%)}
 .hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(30px,5vw,64px);align-items:center;padding-block:clamp(44px,7vw,88px)}
 .hero-copy{display:grid;gap:24px}
@@ -97,7 +105,7 @@ nav.main a:hover{color:var(--orange)}
 .progress i.on{background:var(--orange)}
 label{display:grid;gap:6px;font-weight:700;font-size:.92rem}
 input,select{font:inherit;font-size:1rem;width:100%;min-width:0;padding:13px 14px;border:1.5px solid var(--line);border-radius:var(--r-s);background:#fff;color:var(--ink)}
-input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 0 3px rgba(36,80,127,.18)}
+input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 0 3px rgba(44,79,158,.18)}
 .addr{position:relative}
 .addr .i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
 .addr input{padding-left:44px;font-size:1.05rem;padding-block:16px}
@@ -222,7 +230,7 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 .final .call-line a{color:#fff;font-weight:800;text-decoration:none}
 
 /* footer */
-footer{background:#0A1F36;color:var(--on-dark-muted);font-size:.9rem}
+footer{background:#0F2357;color:var(--on-dark-muted);font-size:.9rem}
 footer .wrap{padding-block:48px 36px;display:grid;gap:30px}
 .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
 footer .logo{color:#fff}
@@ -265,7 +273,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   .timeline li::before{left:25px;top:52px}
   .final form{flex-direction:column}
   .offer-card .top span{display:none}
-  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;box-shadow:0 -6px 20px -10px rgba(14,42,71,.4);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;box-shadow:0 -6px 20px -10px rgba(21,47,112,.4);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
   .mbar .btn{padding:13px 10px;font-size:1rem}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -283,7 +291,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 
 <header class="site"><div class="wrap">
   <a class="logo" href="#top" aria-label="Cx2 Homebuyers home">
-    <span class="logo-mark"><svg><use href="#i-house"/></svg></span>
+    <span class="logo-mark"><svg viewBox="0 0 192 192" aria-hidden="true"><use href="#logo"/></svg></span>
     <span><b>Cx2 Homebuyers</b><small>Houston cash home buyers</small></span>
   </a>
   <nav class="main" aria-label="Main">
@@ -493,7 +501,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 <footer><div class="wrap">
   <div class="foot-grid">
     <div style="display:grid;gap:14px;align-content:start">
-      <a class="logo" href="#top"><span class="logo-mark"><svg><use href="#i-house"/></svg></span><span><b>Cx2 Homebuyers</b><small>Houston cash home buyers</small></span></a>
+      <a class="logo" href="#top"><span class="logo-mark"><svg viewBox="0 0 192 192" aria-hidden="true"><use href="#logo"/></svg></span><span><b>Cx2 Homebuyers</b><small>Houston cash home buyers</small></span></a>
       <p>A local, owner-run company helping Houston homeowners sell houses as-is, on their timeline.</p>
     </div>
     <div><h4>Contact</h4><ul class="contact">
@@ -538,7 +546,7 @@ var SITE = {
   ownerPhoto: "owner.jpg",
   heroPhoto: "",               // e.g. "hero.jpg" (a Houston house you bought, or you at a closing)
   googleUrl: "",               // your Google Business Profile link
-  domain: "",                  // e.g. "https://cx2homebuyers.com"
+  domain: "https://cx2homebuyers.com",
   areas: ["Houston","Pasadena","Pearland","Missouri City","Sugar Land","Stafford","Bellaire","Katy","Cypress","Jersey Village","Spring","Humble","Atascocita","Kingwood","Baytown","Channelview","Deer Park","La Porte","League City","Friendswood","Webster","Clear Lake","Alvin","Manvel","Dickinson","Texas City","Richmond","Rosenberg","Tomball","The Woodlands"],
   reviews: []                  // real Google reviews only, with permission: {name:"Maria G.", area:"Pasadena", text:"..."}
 };
@@ -574,6 +582,7 @@ var PH={owner:"Your name",phone:"Your phone",email:"Your email",hours:"Your hour
   var ld={"@context":"https://schema.org","@type":"LocalBusiness","name":"Cx2 Homebuyers LLC",
     "description":"Local, owner-run Houston company that makes as-is cash offers on houses in Greater Houston.",
     "areaServed":SITE.areas.map(function(a){return{"@type":"City","name":a+", TX"};})};
+  if(SITE.domain){ld.logo=SITE.domain+"/logo-512.png";ld.image=SITE.domain+"/logo-512.png";}
   if(SITE.phone)ld.telephone=SITE.phone;if(SITE.email)ld.email=SITE.email;if(SITE.domain)ld.url=SITE.domain;
   if(SITE.googleUrl)ld.sameAs=[SITE.googleUrl];if(SITE.owner)ld.founder={"@type":"Person","name":SITE.owner};
   var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(ld);document.head.appendChild(s);
