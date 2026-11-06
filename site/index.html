@@ -127,11 +127,6 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 .hero-photo{position:relative;margin:0}
 .hero-photo .frame{border-radius:24px;overflow:hidden;aspect-ratio:4/5;max-height:660px;width:100%;box-shadow:0 34px 70px -34px rgba(21,47,112,.6)}
 .hero-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:62% 40%}
-.seal{position:absolute;left:-46px;top:40px;width:116px;height:116px;filter:drop-shadow(0 12px 22px rgba(21,47,112,.35))}
-.owner-chip{position:absolute;left:-34px;bottom:34px;background:#fff;border-radius:16px;padding:12px 18px 12px 12px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 44px -18px rgba(21,47,112,.5);max-width:calc(100% - 20px)}
-.owner-chip img{width:54px;height:54px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 2px var(--orange)}
-.owner-chip b{display:block;font-size:.98rem;line-height:1.25}
-.owner-chip a{color:var(--navy);font-weight:800;text-decoration:none;font-size:.97rem}
 
 /* trust bar */
 .trustbar{background:#fff;border-bottom:1px solid var(--line)}
@@ -265,8 +260,6 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   .hero .wrap{display:flex;flex-direction:column;align-items:stretch;gap:24px}
   .hero-copy{display:contents}
   .hero-head{order:1}.hero-form{order:2}.hero-photo{order:3;max-width:560px;width:100%;align-self:center}.sits-mini{order:4;border-bottom:0;padding-bottom:0}
-  .seal{left:14px;top:14px;width:88px;height:88px}
-  .owner-chip{left:14px;bottom:14px}
   nav.main{display:none}
   .sits{grid-template-columns:repeat(2,minmax(0,1fr))}
   .trustbar ul{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -418,17 +411,6 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 
     <figure class="hero-photo">
       <div class="frame"><img src="hero.jpg" srcset="hero-800.jpg 800w, hero.jpg 1122w" sizes="(max-width: 980px) 100vw, 46vw" width="1122" height="1402" alt="Homeowner holding house keys in front of a brick ranch house" fetchpriority="high"></div>
-      <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
-        <circle cx="60" cy="60" r="58" fill="#152F70"/>
-        <circle cx="60" cy="60" r="53" fill="none" stroke="#FFFFFF" stroke-opacity=".3"/>
-        <defs><path id="sealPath" d="M60 60m-41 0a41 41 0 1 1 82 0a41 41 0 1 1-82 0"/></defs>
-        <text fill="#FFFFFF" font-family="Archivo, Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="2"><textPath href="#sealPath">LOCALLY OWNED &#8226; HOUSTON, TX &#8226;</textPath></text>
-        <use href="#logo" x="38" y="38" width="44" height="44" style="color:#FFFFFF"/>
-      </svg>
-      <div class="owner-chip">
-        <img src="owner.jpg" alt="Cooper, owner of Cx2 Homebuyers" width="54" height="54">
-        <span><b>You'll talk to <span data-fill="owner"></span>, the owner</b><a data-tel data-fill="phone" href="#offer"></a></span>
-      </div>
     </figure>
   </div>
 </section>
