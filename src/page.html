@@ -144,7 +144,8 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 
 /* steps (how it works) */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.5vw,28px)}
-.step-card{display:grid;gap:10px;align-content:start;text-align:center;justify-items:center}
+.step-card{display:grid;gap:10px;grid-template-rows:auto auto auto 1fr auto;text-align:center;justify-items:center}
+.step-when{align-self:end}
 .step-card .art{width:100%;background:#fff;border-radius:16px;box-shadow:0 18px 40px -22px rgba(0,0,0,.55);padding:14px;margin-bottom:12px}
 .step-card .art svg{display:block;width:100%;height:auto}
 .step-num{font-size:.85rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#FF9A5A}
@@ -395,8 +396,8 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
         <path d="M322 104q10 10 0 22M330 98q16 16 0 34" fill="none" stroke="#E06A1F" stroke-width="3.5" stroke-linecap="round"/>
       </svg></div>
       <span class="step-num">Step 1</span>
-      <h3>We reach out, or you do</h3>
-      <p><b>We contact homeowners in the areas we buy</b> using public property records, like county appraisal district data. You can also fill out the form or call us. Either way, it starts with a quick, friendly conversation.</p>
+      <h3>We reach out</h3>
+      <p><b>We contact homeowners in the areas we buy</b> using public property records, like county appraisal district data. It starts with a quick, friendly call to learn about your house and what you need.</p>
       <span class="step-when"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>About 10 to 15 minutes</span>
     </li>
     <li class="step-card">
@@ -422,8 +423,8 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
         <path d="M170 172l6 6 11-12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg></div>
       <span class="step-num">Step 2</span>
-      <h3>We make a fair offer</h3>
-      <p><b>We walk through the house with you.</b> No cleaning or repairs needed. Then you get a written, no-obligation cash offer, and we explain exactly how we got the number. Take all the time you need.</p>
+      <h3>We listen and lay out your options</h3>
+      <p><b>We sit down with you first, then walk the house together.</b> No cleaning or repairs needed, and we take photos as we go. Then we lay out your honest options side by side, even listing with an agent if that nets you more, and give you a written, no-obligation cash offer with the numbers behind it.</p>
       <span class="step-when"><svg class="i" aria-hidden="true"><use href="#i-file-text"/></svg><span data-fill="offerSpeed"></span></span>
     </li>
     <li class="step-card">
@@ -453,7 +454,6 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
     </li>
   </ol>
   <div class="steps-foot">
-    <a class="btn" data-tel href="#offer"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call <span data-fill="phone"></span></a>
     <p>Not interested? Tell us on the phone or email <span data-fill="email"></span>, and we'll take you off our list right away.</p>
   </div>
 </div></section>
