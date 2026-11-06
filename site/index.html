@@ -81,47 +81,57 @@ nav.main a:hover{color:var(--orange)}
 .head-cta .btn{padding:12px 18px;font-size:.98rem}
 
 /* hero */
-.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(21,47,112,.96) 0%,rgba(21,47,112,.88) 48%,rgba(21,47,112,.55) 100%)}
-.hero-pattern{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(var(--on-dark) 1px,transparent 1px),linear-gradient(90deg,var(--on-dark) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(100deg,transparent 30%,#000 100%);-webkit-mask-image:linear-gradient(100deg,transparent 30%,#000 100%)}
-.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(30px,5vw,64px);align-items:center;padding-block:clamp(44px,7vw,88px)}
-.hero-copy{display:grid;gap:24px}
-.hero-kicker{display:inline-flex;align-items:center;gap:8px;justify-self:start;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 14px 6px 10px;font-weight:600;font-size:.92rem;color:#fff}
-.hero-kicker .i{color:#FF9A5A}
-.hero h1 span.line{display:block}
-.hero .sub{font-size:1.2rem;color:var(--on-dark-muted);max-width:56ch}
-.checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px}
-.checks li{display:flex;gap:10px;align-items:center;font-weight:600}
-.checks .tick{width:24px;height:24px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:none}
-.checks .tick svg{width:14px;height:14px;color:#fff;stroke-width:3}
-
-.offer-card{background:#fff;color:var(--ink);border-radius:var(--r);box-shadow:0 30px 70px -30px rgba(0,0,0,.6);overflow:hidden}
-.offer-card .top{background:var(--orange);color:#fff;padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.offer-card .top strong{font-size:1.25rem;font-weight:800}
-.offer-card .top span{font-size:.85rem;font-weight:600;opacity:.95;white-space:nowrap}
-.offer-card form{padding:24px 26px 26px;display:grid;gap:14px}
-.step{display:grid;gap:14px}
-.progress{display:flex;gap:6px}
-.progress i{flex:1;height:5px;border-radius:3px;background:var(--line)}
-.progress i.on{background:var(--orange)}
+.hero{background:linear-gradient(180deg,#F5F8FC 0%,#E9EFF8 100%);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(36px,6vw,84px);align-items:start;padding-block:clamp(32px,5vw,64px)}
+.hero-copy{display:grid;gap:26px;align-content:start;padding-top:clamp(0px,2vw,28px)}
+.hero-head{display:grid;gap:18px}
+.hero h1{color:var(--navy);font-size:clamp(2.4rem,4.7vw,3.5rem)}
+.hero h1 .line{display:block}
+.hero .sub{font-size:1.18rem;color:var(--muted);max-width:52ch}
+.sits-mini{list-style:none;margin:0;padding:0 0 24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;border-bottom:1px solid var(--line)}
+.sits-mini li{display:flex;gap:10px;align-items:center;font-weight:600;font-size:1rem}
+.sits-mini .tick{width:22px;height:22px;border-radius:50%;background:var(--orange);display:grid;place-items:center;flex:none}
+.sits-mini .tick svg{width:13px;height:13px;color:#fff;stroke-width:3.2}
+.hero-form{display:grid;gap:14px}
+.hero-form form{display:grid;gap:14px}
+.step{display:grid;gap:10px}
+.lead{font-weight:600;font-size:1.02rem;color:var(--ink)}
+.addr-row{display:flex;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 16px 34px -22px rgba(21,47,112,.45)}
+.addr-row:focus-within{border-color:var(--navy-3)}
+.addr-row .addr{flex:1;min-width:0}
+.addr-row input{border:0;box-shadow:none!important}
+.addr-row .btn{white-space:nowrap;padding:14px 22px}
+.step2{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:14px;box-shadow:0 16px 34px -22px rgba(21,47,112,.45)}
+.step-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.step-top b{font-size:1.12rem}
+.recap{display:flex;gap:8px;align-items:center;background:var(--bg-2);border-radius:var(--r-s);padding:10px 12px;font-weight:600;font-size:.95rem}
+.recap .i{width:18px;height:18px;color:var(--orange)}
 label{display:grid;gap:6px;font-weight:700;font-size:.92rem}
 input,select{font:inherit;font-size:1rem;width:100%;min-width:0;padding:13px 14px;border:1.5px solid var(--line);border-radius:var(--r-s);background:#fff;color:var(--ink)}
 input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 0 3px rgba(44,79,158,.18)}
 .addr{position:relative}
 .addr .i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
-.addr input{padding-left:44px;font-size:1.05rem;padding-block:16px}
+.addr input{padding-left:44px;font-size:1.05rem;padding-block:14px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.78rem;line-height:1.45;color:var(--muted)}
 .consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--navy)}
-.form-foot{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;color:var(--muted)}
-.form-foot span{display:inline-flex;align-items:center;gap:6px}
-.form-foot .i{width:16px;height:16px;color:var(--green)}
-.back{background:none;border:0;font:inherit;font-size:.9rem;color:var(--muted);text-decoration:underline;cursor:pointer;justify-self:start;padding:0}
-.or-call{border-top:1px solid var(--line);padding:14px 26px;font-size:.95rem;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.or-call a{color:var(--navy);font-weight:800;text-decoration:none}
-.thanks{padding:28px 26px;display:grid;gap:10px}
+.back{background:none;border:0;font:inherit;font-size:.9rem;color:var(--navy-3);text-decoration:underline;cursor:pointer;padding:0}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.93rem;color:var(--muted)}
+.hero-meta span{display:inline-flex;gap:7px;align-items:center}
+.hero-meta a{color:var(--navy);font-weight:800;text-decoration:none}
+.hero-meta .i{width:17px;height:17px;color:var(--green)}
+.hero-meta .call .i{color:var(--orange)}
+.thanks{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:10px}
 .thanks .big{display:flex;gap:10px;align-items:center;font-size:1.3rem;font-weight:800;color:var(--green)}
+
+.hero-photo{position:relative;margin:0}
+.hero-photo .frame{border-radius:24px;overflow:hidden;aspect-ratio:4/5;max-height:660px;width:100%;box-shadow:0 34px 70px -34px rgba(21,47,112,.6)}
+.hero-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.seal{position:absolute;left:-46px;top:40px;width:116px;height:116px;filter:drop-shadow(0 12px 22px rgba(21,47,112,.35))}
+.owner-chip{position:absolute;left:-34px;bottom:34px;background:#fff;border-radius:16px;padding:12px 18px 12px 12px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 44px -18px rgba(21,47,112,.5);max-width:calc(100% - 20px)}
+.owner-chip img{width:54px;height:54px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 2px var(--orange)}
+.owner-chip b{display:block;font-size:.98rem;line-height:1.25}
+.owner-chip a{color:var(--navy);font-weight:800;text-decoration:none;font-size:.97rem}
 
 /* trust bar */
 .trustbar{background:#fff;border-bottom:1px solid var(--line)}
@@ -251,7 +261,12 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 .mbar{display:none}
 
 @media (max-width:980px){
-  .hero .wrap,.ob,.owner,.areas-wrap,.final .wrap{grid-template-columns:1fr}
+  .ob,.owner,.areas-wrap,.final .wrap{grid-template-columns:1fr}
+  .hero .wrap{display:flex;flex-direction:column;align-items:stretch;gap:24px}
+  .hero-copy{display:contents}
+  .hero-head{order:1}.hero-form{order:2}.hero-photo{order:3;max-width:560px;width:100%;align-self:center}.sits-mini{order:4;border-bottom:0;padding-bottom:0}
+  .seal{left:14px;top:14px;width:88px;height:88px}
+  .owner-chip{left:14px;bottom:14px}
   nav.main{display:none}
   .sits{grid-template-columns:repeat(2,minmax(0,1fr))}
   .trustbar ul{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -265,7 +280,9 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   .head-cta .btn,.topbar .hours{display:none}
   .head-phone span.num{display:none}
   .head-phone{width:44px;height:44px;border-radius:50%;background:var(--orange-soft);justify-content:center}
-  .checks,.row2,.ob-cards,.sits,.compare,.reviews,.foot-grid{grid-template-columns:1fr}
+  .addr-row{flex-direction:column}
+  .hero-photo .frame{aspect-ratio:1/1}
+  .row2,.ob-cards,.sits,.compare,.reviews,.foot-grid{grid-template-columns:1fr}
   .trustbar ul{grid-template-columns:1fr}
   .trustbar li{padding:14px 0;border-top:1px solid var(--line)}
   .trustbar li:first-child{border-top:0}
@@ -274,7 +291,6 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   .timeline .num svg{width:22px;height:22px}
   .timeline li::before{left:25px;top:52px}
   .final form{flex-direction:column}
-  .offer-card .top span{display:none}
   .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;box-shadow:0 -6px 20px -10px rgba(21,47,112,.4);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
   .mbar .btn{padding:13px 10px;font-size:1rem}
 }
@@ -342,64 +358,78 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 </div></header>
 
 <main id="top">
-<section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-pattern" aria-hidden="true"></div>
+<section class="hero" id="offer">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="hero-kicker"><svg class="i"><use href="#i-house"/></svg>Houston's local, owner-run home buyer</span>
-      <h1><span class="line">Sell your house fast</span><span class="line">in Houston.</span></h1>
-      <p class="sub">Get a fair cash offer for your house as-is. No repairs, no agent commissions, no closing costs, and you choose the closing date.</p>
-      <ul class="checks">
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Any condition, any situation</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>$0 commissions or fees</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>We pay closing costs</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Close on your timeline</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>No cleaning or showings</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>No pressure, no obligation</li>
+      <div class="hero-head">
+        <h1><span class="line">Sell your house fast</span><span class="line">in Houston.</span></h1>
+        <p class="sub">Get a fair, no-obligation cash offer for your house as-is. No repairs, no agent commissions, no closing costs, and you pick the closing date.</p>
+      </div>
+      <ul class="sits-mini" aria-label="Common reasons Houston homeowners call us">
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Inherited a house</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Behind on payments</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Costly repairs needed</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Divorce or family change</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Tired of being a landlord</li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Need to move fast</li>
       </ul>
-    </div>
-
-    <div class="offer-card" id="offer">
-      <div class="top"><strong>Get your cash offer</strong><span>Takes about 2 minutes</span></div>
-      <form name="offer" method="POST" data-netlify="true" netlify-honeypot="company" id="offerForm" novalidate>
-        <input type="hidden" name="form-name" value="offer">
-        <p hidden><label>Leave this empty<input name="company" id="f-company" tabindex="-1" autocomplete="off"></label></p>
-        <div class="progress" aria-hidden="true"><i class="on"></i><i id="p2"></i></div>
-        <div class="step" id="step1">
-          <label for="f-address">Property address</label>
-          <div class="addr"><svg class="i"><use href="#i-map-pin"/></svg><input id="f-address" name="address" autocomplete="street-address" required placeholder="Enter your property address"></div>
-          <button class="btn" type="button" id="next">Get my cash offer</button>
-        </div>
-        <div class="step" id="step2" hidden>
-          <div class="row2">
-            <label>Full name<input id="f-name" name="name" autocomplete="name"></label>
-            <label>Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
+      <div class="hero-form">
+        <form name="offer" method="POST" data-netlify="true" netlify-honeypot="company" id="offerForm" novalidate>
+          <input type="hidden" name="form-name" value="offer">
+          <p hidden><label>Leave this empty<input name="company" id="f-company" tabindex="-1" autocomplete="off"></label></p>
+          <div class="step" id="step1">
+            <label class="lead" for="f-address">Enter your address to get your no-obligation cash offer:</label>
+            <div class="addr-row">
+              <div class="addr"><svg class="i"><use href="#i-map-pin"/></svg><input id="f-address" name="address" autocomplete="street-address" required placeholder="Enter your property address"></div>
+              <button class="btn" type="button" id="next">Get my cash offer</button>
+            </div>
           </div>
-          <label>Email (optional)<input id="f-email" name="email" type="email" autocomplete="email"></label>
-          <div class="row2">
-            <label>When do you want to sell?
-              <select id="f-timeline" name="timeline"><option value="">Choose one</option><option>As soon as possible</option><option>Within 30 days</option><option>1 to 3 months</option><option>Just exploring</option></select>
-            </label>
-            <label>House condition
-              <select id="f-condition" name="condition"><option value="">Choose one</option><option>Move-in ready</option><option>Needs some work</option><option>Needs major repairs</option><option>Not sure</option></select>
-            </label>
+          <div class="step2" id="step2" hidden>
+            <div class="step-top"><b>Almost done. Where should we send your offer?</b><button class="back" type="button" id="back">Change address</button></div>
+            <p class="recap"><svg class="i"><use href="#i-map-pin"/></svg><span id="addrRecap"></span></p>
+            <div class="row2">
+              <label>Full name<input id="f-name" name="name" autocomplete="name"></label>
+              <label>Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
+            </div>
+            <label>Email (optional)<input id="f-email" name="email" type="email" autocomplete="email"></label>
+            <div class="row2">
+              <label>When do you want to sell?
+                <select id="f-timeline" name="timeline"><option value="">Choose one</option><option>As soon as possible</option><option>Within 30 days</option><option>1 to 3 months</option><option>Just exploring</option></select>
+              </label>
+              <label>House condition
+                <select id="f-condition" name="condition"><option value="">Choose one</option><option>Move-in ready</option><option>Needs some work</option><option>Needs major repairs</option><option>Not sure</option></select>
+              </label>
+            </div>
+            <label class="consent"><input type="checkbox" id="f-sms" name="sms_consent" value="yes"><span>Optional: Cx2 Homebuyers may text me about my property at this number. Message frequency varies. Msg and data rates may apply. Reply STOP to opt out. Consent is not required to get an offer.</span></label>
+            <button class="btn" type="submit">Send my offer request</button>
           </div>
-          <label class="consent"><input type="checkbox" id="f-sms" name="sms_consent" value="yes"><span>Optional: Cx2 Homebuyers may text me about my property at this number. Message frequency varies. Msg and data rates may apply. Reply STOP to opt out. Consent is not required to get an offer.</span></label>
-          <button class="btn" type="submit">Send my offer request</button>
-          <button class="back" type="button" id="back">Back</button>
+        </form>
+        <div class="thanks" id="thanks" hidden>
+          <p class="big"><svg class="i"><use href="#i-circle-check-big"/></svg>Request received</p>
+          <p>Thank you. <span data-fill="owner"></span> will call you within one business day. If it's urgent, call <span data-fill="phone"></span>.</p>
         </div>
-        <div class="form-foot">
+        <div class="hero-meta">
+          <span class="call"><svg class="i"><use href="#i-phone"/></svg>Prefer to talk? <a data-tel data-fill="phone" href="#offer"></a></span>
           <span><svg class="i"><use href="#i-circle-check-big"/></svg>No obligation</span>
           <span><svg class="i"><use href="#i-shield-check"/></svg>Your info is never sold</span>
         </div>
-      </form>
-      <div class="thanks" id="thanks" hidden>
-        <p class="big"><svg class="i"><use href="#i-circle-check-big"/></svg>Request received</p>
-        <p>Thank you. <span data-fill="owner"></span> will call you within one business day. If it's urgent, call <span data-fill="phone"></span>.</p>
       </div>
-      <div class="or-call"><svg class="i" style="color:var(--orange)"><use href="#i-phone"/></svg>Prefer to talk? Call or text <a data-tel data-fill="phone" href="#offer"></a></div>
     </div>
+
+    <figure class="hero-photo">
+      <div class="frame"><img src="hero.jpg" srcset="hero-800.jpg 800w, hero.jpg 1122w" sizes="(max-width: 980px) 100vw, 46vw" width="1122" height="1402" alt="Homeowner holding house keys in front of a brick ranch house" fetchpriority="high"></div>
+      <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="58" fill="#152F70"/>
+        <circle cx="60" cy="60" r="53" fill="none" stroke="#FFFFFF" stroke-opacity=".3"/>
+        <defs><path id="sealPath" d="M60 60m-41 0a41 41 0 1 1 82 0a41 41 0 1 1-82 0"/></defs>
+        <text fill="#FFFFFF" font-family="Archivo, Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="2"><textPath href="#sealPath">LOCALLY OWNED &#8226; HOUSTON, TX &#8226;</textPath></text>
+        <use href="#logo" x="38" y="38" width="44" height="44" style="color:#FFFFFF"/>
+      </svg>
+      <div class="owner-chip">
+        <img src="owner.jpg" alt="Cooper, owner of Cx2 Homebuyers" width="54" height="54">
+        <span><b>You'll talk to <span data-fill="owner"></span>, the owner</b><a data-tel data-fill="phone" href="#offer"></a></span>
+      </div>
+    </figure>
   </div>
 </section>
 
@@ -579,7 +609,6 @@ var SITE = {
   ],
   dealsClosed: "",             // e.g. "5" (real number only; hidden when blank)
   ownerPhoto: "owner.jpg",
-  heroPhoto: "",               // e.g. "hero.jpg" (a Houston house you bought, or you at a closing)
   googleUrl: "",               // your Google Business Profile link
   domain: "https://cx2homebuyers.com",
   areas: ["Houston","Pasadena","Pearland","Missouri City","Sugar Land","Stafford","Bellaire","Katy","Cypress","Jersey Village","Spring","Humble","Atascocita","Kingwood","Baytown","Channelview","Deer Park","La Porte","League City","Friendswood","Webster","Clear Lake","Alvin","Manvel","Dickinson","Texas City","Richmond","Rosenberg","Tomball","The Woodlands"],
@@ -599,7 +628,6 @@ var PH={owner:"Your name",phone:"Your phone",email:"Your email",hours:"Your hour
   var st=document.getElementById("story");
   if(SITE.story&&SITE.story.length){SITE.story.forEach(function(t){var p=document.createElement("p");p.textContent=t;st.appendChild(p);});}
   else{var p=document.createElement("p");p.className="ph";p.textContent=PH.story;st.appendChild(p);}
-  if(SITE.heroPhoto)document.getElementById("heroBg").style.backgroundImage="url('"+SITE.heroPhoto+"')";
   if(SITE.dealsClosed)document.getElementById("dealStat").hidden=false;
   var al=document.getElementById("areaList");
   SITE.areas.forEach(function(a){var li=document.createElement("li");li.innerHTML='<svg class="i"><use href="#i-map-pin"/></svg>';li.appendChild(document.createTextNode(a));al.appendChild(li);});
@@ -623,12 +651,12 @@ var PH={owner:"Your name",phone:"Your phone",email:"Your email",hours:"Your hour
   var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(ld);document.head.appendChild(s);
 
   var f=document.getElementById("offerForm"),s1=document.getElementById("step1"),s2=document.getElementById("step2"),
-      t=document.getElementById("thanks"),addr=document.getElementById("f-address"),p2=document.getElementById("p2"),
+      t=document.getElementById("thanks"),addr=document.getElementById("f-address"),recap=document.getElementById("addrRecap"),
       name=document.getElementById("f-name"),phone=document.getElementById("f-phone");
   function toStep2(){if(!addr.value.trim()){addr.required=true;addr.reportValidity();addr.focus();return;}
-    s1.hidden=true;s2.hidden=false;p2.classList.add("on");name.required=true;phone.required=true;name.focus();}
+    recap.textContent=addr.value.trim();s1.hidden=true;s2.hidden=false;name.required=true;phone.required=true;name.focus();}
   document.getElementById("next").addEventListener("click",toStep2);
-  document.getElementById("back").addEventListener("click",function(){s2.hidden=true;s1.hidden=false;p2.classList.remove("on");addr.focus();});
+  document.getElementById("back").addEventListener("click",function(){s2.hidden=true;s1.hidden=false;addr.focus();});
   f.addEventListener("submit",function(e){e.preventDefault();
     if(s2.hidden){toStep2();return;}
     if(!name.value.trim()||!phone.value.trim()){(name.value.trim()?phone:name).reportValidity();return;}
