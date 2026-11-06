@@ -44,6 +44,10 @@ p{margin:0}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
 .sec{padding-block:clamp(60px,8vw,104px)}
 .sec.tint{background:var(--bg-2)}
+.sec.dark{background:var(--navy);color:#fff;border-top:1px solid rgba(255,255,255,.12)}
+.sec.dark h2{color:#fff}
+.sec.dark .sec-head p{color:var(--on-dark-muted)}
+.sec.dark .ob-cards div{border-color:transparent;color:var(--ink)}
 .sec-head{display:grid;gap:14px;max-width:760px;margin-bottom:clamp(32px,4vw,48px)}
 .sec-head.center{margin-inline:auto;text-align:center;justify-items:center}
 .sec-head p{font-size:1.12rem;color:var(--muted)}
@@ -409,12 +413,12 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-landmark"/></svg></span><span><b>Local title company</b><small>Licensed, and handles the money</small></span></li>
 </ul></div></section>
 
-<section class="sec tint" id="contacted"><div class="wrap ob">
+<section class="sec dark" id="contacted"><div class="wrap ob">
   <div class="sec-head" style="margin-bottom:0">
     <span class="ob-badge"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Did we call you or send you a letter?</span>
     <h2>Yes, that was us. Here's who we are.</h2>
     <p>We reach out to Houston homeowners whose houses may be a fit for a quick, as-is sale. It's normal to want to check us out first, so here's what you should know.</p>
-    <a class="btn navy" data-tel href="tel:3465172534" style="justify-self:start"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call <span data-fill="phone">(346) 517-2534</span></a>
+    <a class="btn" data-tel href="tel:3465172534" style="justify-self:start"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call <span data-fill="phone">(346) 517-2534</span></a>
   </div>
   <div class="ob-cards">
     <div><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-search-check"/></svg></span><h3>How we found you</h3><p>From public property records, like county appraisal district data, and data services that compile contact details from public sources.</p></div>
