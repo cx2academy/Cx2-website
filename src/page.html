@@ -141,6 +141,7 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 .owner .photo{aspect-ratio:4/5}
 .owner-copy{display:grid;gap:18px}
 .owner-copy p{font-size:1.1rem;color:var(--muted);max-width:60ch}
+.story{display:grid;gap:14px}
 .owner-copy .quote{font-size:1.35rem;line-height:1.45;color:var(--ink);font-weight:600;border-left:4px solid var(--orange);padding-left:18px}
 .sig{display:flex;align-items:center;gap:14px}
 .sig b{font-size:1.15rem}
@@ -273,7 +274,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 
 {{ICONS}}
 
-<div class="preview" id="previewBar"><div class="wrap">Preview: yellow highlights and striped boxes are where your real name, phone, photos and details go. The form doesn't send anything yet.</div></div>
+<div class="preview" id="previewBar"><div class="wrap">Preview: the form doesn't send anything until the site is live on your domain.</div></div>
 
 <div class="topbar"><div class="wrap">
   <span><svg class="i"><use href="#i-map-pin"/></svg>Locally owned in Houston, Texas</span>
@@ -386,8 +387,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   <div class="owner-copy">
     <h2>Meet <span data-fill="owner"></span>, the owner</h2>
     <p class="quote">"When you call, you talk to me. When we meet, it's me at your door."</p>
-    <p data-fill="story"></p>
-    <p>We're not a national call center, and we don't sell your information to other companies. We're a Houston business, and we treat every seller the way we'd want our own family treated.</p>
+    <div class="story" id="story"></div>
     <div class="stat" id="dealStat" hidden><b data-fill="dealsClosed"></b><span>Houston homeowners helped so far</span></div>
     <div class="sig"><span><b data-fill="owner"></b><small>Owner, Cx2 Homebuyers LLC</small></span></div>
   </div>
@@ -508,6 +508,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   </div>
   <div class="legal">
     <p>Cx2 Homebuyers LLC is not a licensed real estate broker or agent and does not represent buyers or sellers. We contract to purchase real property and may sell or assign our contract or equitable interest to another buyer. As required by Texas law (Tex. Occ. Code &sect;1101.0045; Tex. Prop. Code &sect;5.0205), we disclose the nature of our interest in writing to the property owner before entering a contract and to any potential buyer. Offers are typically below full market value in exchange for speed, convenience and buying as-is. "Cash" means no bank financing is needed to buy; it does not guarantee closing, which depends on title and the contract terms. Nothing on this site is legal, tax or financial advice.</p>
+    <p>Equal housing opportunity. Cx2 Homebuyers works with every homeowner regardless of race, color, religion, sex, disability, familial status or national origin.</p>
     <details id="privacy"><summary>Privacy policy</summary><p>We collect the information you give us (such as your name, phone, email and property address) only to respond to your request and discuss selling your property. We do not sell or rent your information. We share it only as needed to evaluate or complete a sale (for example, with a title company or a buyer we assign a contract to) or when the law requires it. We text you only if you gave consent, and you can reply STOP at any time. To have your information removed or to stop contact, email <span data-fill="email"></span> or call <span data-fill="phone"></span>.</p></details>
     <p>&copy; <span id="yr">2026</span> Cx2 Homebuyers LLC. All rights reserved.</p>
   </div>
@@ -522,14 +523,19 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 /* ===== EDIT YOUR DETAILS HERE ===== */
 var SITE = {
   live: false,                 // true on the real website so the form sends
-  owner: "",                   // your first name
-  phone: "",                   // e.g. "(832) 555-0123"
-  email: "",                   // e.g. "info@cx2homebuyers.com"
+  owner: "Cooper",
+  phone: "(346) 517-2534",
+  email: "contact@cx2homebuyers.com",
   hours: "Mon to Sat, 9am to 7pm",
   offerSpeed: "Usually within 24 hours of seeing the house",
-  story: "",                   // 2 to 3 true sentences about you
+  story: [                     // one string per paragraph
+    "I grew up in Lufkin, in deep East Texas, and started in real estate when I was 16. My first deal was with a family in Dallas who had inherited a house that needed a lot of work and came with tens of thousands of dollars in back taxes they couldn't pay.",
+    "I connected them with a cash buyer I knew who was looking for a house to restore in that neighborhood. We set it up so the back taxes were paid off at closing, the family walked away with the amount they needed, and the buyer brought the house back to life. Everyone came out ahead, and that's when I knew this was what I wanted to do.",
+    "At 18 I moved to Houston and started Cx2 Homebuyers to help homeowners in situations a regular listing can't fix. I connect them with cash buyers I've built real relationships with, and I work to get them the best cash offer I can.",
+    "Cx2 is a faith-based business. Too often in real estate, people and their homes get treated like numbers on a spreadsheet. I see a neighbor who needs help. My goal is to be honest with you, treat you with respect, and help you get from a hard situation to a better one. I'm glad to help every homeowner, whatever their background or beliefs."
+  ],
   dealsClosed: "",             // e.g. "5" (real number only; hidden when blank)
-  ownerPhoto: "",              // e.g. "owner.jpg"
+  ownerPhoto: "owner.jpg",
   heroPhoto: "",               // e.g. "hero.jpg" (a Houston house you bought, or you at a closing)
   googleUrl: "",               // your Google Business Profile link
   domain: "",                  // e.g. "https://cx2homebuyers.com"
@@ -547,6 +553,9 @@ var PH={owner:"Your name",phone:"Your phone",email:"Your email",hours:"Your hour
   $("[data-photo]").forEach(function(el){var v=SITE[el.dataset.photo];
     if(v){var im=new Image();im.src=v;im.alt=el.dataset.alt||"Photo of "+(SITE.owner||"the owner");el.appendChild(im);}
     else{el.classList.add("empty");el.innerHTML='<span><svg class="i"><use href="#i-image"/></svg>'+el.dataset.label+'</span>';}});
+  var st=document.getElementById("story");
+  if(SITE.story&&SITE.story.length){SITE.story.forEach(function(t){var p=document.createElement("p");p.textContent=t;st.appendChild(p);});}
+  else{var p=document.createElement("p");p.className="ph";p.textContent=PH.story;st.appendChild(p);}
   if(SITE.heroPhoto)document.getElementById("heroBg").style.backgroundImage="url('"+SITE.heroPhoto+"')";
   if(SITE.dealsClosed)document.getElementById("dealStat").hidden=false;
   var al=document.getElementById("areaList");
