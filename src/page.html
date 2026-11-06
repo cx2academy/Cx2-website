@@ -16,7 +16,7 @@
 <style>
 /* Archivo is self-hosted (SIL Open Font License, see fonts/OFL.txt), so no visitor data goes to Google Fonts */
 @font-face{font-family:"Archivo";font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url("fonts/archivo.woff2") format("woff2-variations"),url("fonts/archivo.woff2") format("woff2")}
-/* Layout: the proven Houston cash-buyer landing page (navy hero with offer form, trust bar, outbound reassurance, owner, situations, 4-step timeline, comparison, areas, FAQ, closing CTA). Single light look like the reference sites; navy for trust, orange for every action. */
+/* Layout: the proven Houston cash-buyer landing page (navy hero with offer form, trust bar, owner, situations, 3-step how it works, comparison, areas, FAQ, closing CTA). Single light look like the reference sites; navy for trust, orange for every action. */
 :root{
   --navy:#152F70; --navy-2:#1D3B86; --navy-3:#2C4F9E;
   --orange:#BF4A08; --orange-hover:#A23E05; --orange-soft:#FDEBDD;
@@ -45,7 +45,6 @@ p{margin:0}
 .sec.dark{background:var(--navy);color:#fff;border-top:1px solid rgba(255,255,255,.12)}
 .sec.dark h2{color:#fff}
 .sec.dark .sec-head p{color:var(--on-dark-muted)}
-.sec.dark .ob-cards div{border-color:transparent;color:var(--ink)}
 .sec-head{display:grid;gap:14px;max-width:760px;margin-bottom:clamp(32px,4vw,48px)}
 .sec-head.center{margin-inline:auto;text-align:center;justify-items:center}
 .sec-head p{font-size:1.12rem;color:var(--muted)}
@@ -143,13 +142,21 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 .photo.empty{display:grid;place-items:center;text-align:center;background:repeating-linear-gradient(135deg,#E9EFF5 0 14px,#E2E9F0 14px 28px);color:var(--muted);font-size:.9rem;font-weight:600;padding:20px}
 .photo.empty .i{width:36px;height:36px;margin:0 auto 8px;color:var(--navy-3)}
 
-/* outbound */
-.ob{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(30px,5vw,64px);align-items:start}
+/* steps (how it works) */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.5vw,28px)}
+.step-card{display:grid;gap:10px;align-content:start;text-align:center;justify-items:center}
+.step-card .art{width:100%;background:#fff;border-radius:16px;box-shadow:0 18px 40px -22px rgba(0,0,0,.55);padding:14px;margin-bottom:12px}
+.step-card .art svg{display:block;width:100%;height:auto}
+.step-num{font-size:.85rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#FF9A5A}
+.step-card h3{color:#fff;font-size:1.3rem}
+.step-card p{color:var(--on-dark-muted);max-width:36ch}
+.step-card p b{color:#fff}
+.step-when{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border-radius:999px;padding:6px 14px;margin-top:4px}
+.step-when .i{width:16px;height:16px;color:#FF9A5A}
+.sec-head.center .ob-badge{justify-self:center;text-align:center;text-wrap:balance;border-radius:20px;line-height:1.35}
+.steps-foot{display:grid;justify-items:center;gap:14px;margin-top:clamp(36px,4vw,52px);text-align:center}
+.steps-foot p{color:var(--on-dark-muted);font-size:.95rem;max-width:60ch}
 .ob-badge{display:inline-flex;align-items:center;gap:8px;justify-self:start;background:var(--orange-soft);color:var(--orange-hover);font-weight:700;font-size:.92rem;padding:7px 14px;border-radius:999px}
-.ob-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.ob-cards div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:start}
-.ob-cards .ic{width:44px;height:44px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center}
-.ob-cards p{color:var(--muted);font-size:.97rem}
 
 /* owner */
 .owner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,72px);align-items:center}
@@ -171,20 +178,6 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 .sit p{color:var(--muted);font-size:.95rem}
 .center-cta{display:flex;justify-content:center;margin-top:36px}
 
-/* timeline */
-.timeline{list-style:none;margin:0 auto;padding:0;max-width:860px;display:grid;gap:0;counter-reset:st}
-.timeline li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:22px;position:relative;padding-bottom:36px;counter-increment:st}
-.timeline li:last-child{padding-bottom:0}
-.timeline li::before{content:"";position:absolute;left:35px;top:72px;bottom:0;width:2px;background:var(--line)}
-.timeline li:last-child::before{display:none}
-.timeline .num{width:72px;height:72px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;position:relative}
-.timeline .num svg{width:30px;height:30px}
-.timeline .num::after{content:counter(st);position:absolute;top:-4px;right:-4px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.9rem;display:grid;place-items:center;border:3px solid #fff}
-.timeline .body{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;display:grid;gap:8px}
-.timeline .when{font-size:.88rem;font-weight:700;color:var(--orange-hover)}
-.timeline p{color:var(--muted)}
-.tip{background:var(--bg-2);border-radius:var(--r-s);padding:10px 14px;font-size:.92rem;color:var(--ink)}
-.tip b{color:var(--navy)}
 
 /* compare */
 .compare{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;max-width:980px;margin:0 auto}
@@ -254,12 +247,13 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 .mbar{display:none}
 
 @media (max-width:980px){
-  .ob,.owner,.areas-wrap,.final .wrap{grid-template-columns:1fr}
+  .owner,.areas-wrap,.final .wrap{grid-template-columns:1fr}
   .hero .wrap{display:flex;flex-direction:column;align-items:stretch;gap:24px}
   .hero-copy{display:contents}
   .hero-head{order:1}.hero-form{order:2}.hero-photo{order:3;max-width:560px;width:100%;align-self:center}.sits-mini{order:4;border-bottom:0;padding-bottom:0}
   nav.main{display:none}
   .sits{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:1fr;max-width:520px;margin-inline:auto;gap:44px}
   .trustbar ul{grid-template-columns:repeat(2,minmax(0,1fr))}
   .trustbar li{border-left:0;padding-left:0}
   .reviews{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -272,14 +266,10 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   .head-phone{width:44px;height:44px;border-radius:50%;background:var(--orange-soft);justify-content:center}
   .addr-row{flex-direction:column}
   .hero-photo .frame{aspect-ratio:1/1}
-  .row2,.ob-cards,.sits,.compare,.reviews,.foot-grid{grid-template-columns:1fr}
+  .row2,.sits,.compare,.reviews,.foot-grid{grid-template-columns:1fr}
   .trustbar ul{grid-template-columns:1fr;padding-block:11px}
   .trustbar li{padding:15.4px 0;border-top:1px solid rgba(255,255,255,.16)}
   .trustbar li:first-child{border-top:0}
-  .timeline li{grid-template-columns:52px minmax(0,1fr);gap:14px}
-  .timeline .num{width:52px;height:52px}
-  .timeline .num svg{width:22px;height:22px}
-  .timeline li::before{left:25px;top:52px}
   .final form{flex-direction:column}
   .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;box-shadow:0 -6px 20px -10px rgba(21,47,112,.4);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
   .mbar .btn{padding:13px 10px;font-size:1rem}
@@ -378,18 +368,93 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-landmark"/></svg></span><span><b>Local title company</b><small>Licensed, and handles the money</small></span></li>
 </ul></div></section>
 
-<section class="sec dark" id="contacted"><div class="wrap ob">
-  <div class="sec-head" style="margin-bottom:0">
-    <span class="ob-badge"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Did we call you or send you a letter?</span>
-    <h2>Yes, that was us. Here's who we are.</h2>
-    <p>We reach out to Houston homeowners whose houses may be a fit for a quick, as-is sale. It's normal to want to check us out first, so here's what you should know.</p>
-    <a class="btn" data-tel href="#offer" style="justify-self:start"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call <span data-fill="phone"></span></a>
+<section class="sec dark" id="how"><div class="wrap">
+  <div class="sec-head center">
+    <span class="ob-badge"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Did we call you or send you a letter? That was us.</span>
+    <h2>How does selling to Cx2 Homebuyers work?</h2>
+    <p>Three simple steps. You can stop at any point, with no cost and no obligation.</p>
   </div>
-  <div class="ob-cards">
-    <div><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-search-check"/></svg></span><h3>How we found you</h3><p>From public property records, like county appraisal district data, and data services that compile contact details from public sources.</p></div>
-    <div><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-ban"/></svg></span><h3>We never ask for money</h3><p>No fees, deposits, bank details or Social Security numbers. The title company handles all of that at closing.</p></div>
-    <div><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg></span><h3>We're a real Texas company</h3><p>Cx2 Homebuyers LLC is registered in Texas, and every sale closes at a licensed Houston title company.</p></div>
-    <div><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span><h3>Want us to stop?</h3><p>Tell us on the phone or email <span data-fill="email"></span>, and we'll take you off our list right away.</p></div>
+  <ol class="steps">
+    <li class="step-card">
+      <div class="art"><svg viewBox="0 0 360 220" aria-hidden="true">
+        <path d="M44 150C30 96 70 46 132 42c44-3 62 14 104 10 52-5 92 22 86 74-6 50-52 66-112 66H110c-36 0-58-14-66-42z" fill="#EDF2FA"/>
+        <line x1="34" y1="184" x2="326" y2="184" stroke="#CBD5E3" stroke-width="4" stroke-linecap="round"/>
+        <rect x="150" y="66" width="12" height="26" fill="#152F70"/>
+        <rect x="74" y="104" width="112" height="80" fill="#fff" stroke="#152F70" stroke-width="3"/>
+        <path d="M62 108L130 58l68 50z" fill="#152F70"/>
+        <rect x="88" y="120" width="22" height="20" rx="2" fill="#D6E3F6" stroke="#152F70" stroke-width="2.5"/>
+        <rect x="150" y="120" width="22" height="20" rx="2" fill="#D6E3F6" stroke="#152F70" stroke-width="2.5"/>
+        <rect x="118" y="144" width="24" height="40" rx="2" fill="#E06A1F"/>
+        <rect x="210" y="146" width="5" height="38" fill="#152F70"/>
+        <rect x="196" y="128" width="34" height="22" rx="9" fill="#2C4F9E"/>
+        <rect x="224" y="118" width="4" height="16" fill="#E06A1F"/><rect x="224" y="118" width="12" height="7" fill="#E06A1F"/>
+        <g transform="rotate(-8 262 72)"><rect x="226" y="50" width="72" height="46" rx="5" fill="#fff" stroke="#152F70" stroke-width="3"/><path d="M228 53l34 25 34-25" fill="none" stroke="#152F70" stroke-width="3" stroke-linejoin="round"/><rect x="282" y="57" width="10" height="10" fill="#E06A1F"/></g>
+        <rect x="270" y="104" width="44" height="78" rx="9" fill="#152F70"/>
+        <rect x="276" y="114" width="32" height="54" rx="3" fill="#D6E3F6"/>
+        <circle cx="292" cy="174" r="3" fill="#fff"/>
+        <path d="M322 104q10 10 0 22M330 98q16 16 0 34" fill="none" stroke="#E06A1F" stroke-width="3.5" stroke-linecap="round"/>
+      </svg></div>
+      <span class="step-num">Step 1</span>
+      <h3>We reach out, or you do</h3>
+      <p><b>We contact homeowners in the areas we buy</b> using public property records, like county appraisal district data. You can also fill out the form or call us. Either way, it starts with a quick, friendly conversation.</p>
+      <span class="step-when"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>About 10 to 15 minutes</span>
+    </li>
+    <li class="step-card">
+      <div class="art"><svg viewBox="0 0 360 220" aria-hidden="true">
+        <path d="M40 140C34 82 84 40 150 44c40 2 60 18 98 12 50-7 84 24 76 76-8 46-50 60-104 60H104c-38 0-60-20-64-52z" fill="#EDF2FA"/>
+        <line x1="34" y1="184" x2="326" y2="184" stroke="#CBD5E3" stroke-width="4" stroke-linecap="round"/>
+        <rect x="202" y="112" width="104" height="72" fill="#fff" stroke="#2C4F9E" stroke-width="3"/>
+        <path d="M190 116l64-46 64 46z" fill="#2C4F9E"/>
+        <rect x="216" y="128" width="20" height="18" rx="2" fill="#D6E3F6" stroke="#2C4F9E" stroke-width="2.5"/>
+        <rect x="272" y="128" width="20" height="18" rx="2" fill="#D6E3F6" stroke="#2C4F9E" stroke-width="2.5"/>
+        <rect x="244" y="148" width="22" height="36" rx="2" fill="#E06A1F"/>
+        <rect x="72" y="40" width="118" height="148" rx="12" fill="#152F70"/>
+        <rect x="84" y="56" width="94" height="120" rx="5" fill="#fff"/>
+        <rect x="110" y="32" width="42" height="18" rx="5" fill="#2C4F9E"/>
+        <text x="96" y="94" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="30" fill="#E06A1F">$</text>
+        <rect x="120" y="74" width="46" height="6" rx="3" fill="#152F70"/>
+        <rect x="120" y="86" width="34" height="6" rx="3" fill="#CBD5E3"/>
+        <rect x="96" y="108" width="70" height="5" rx="2.5" fill="#CBD5E3"/>
+        <rect x="96" y="120" width="62" height="5" rx="2.5" fill="#CBD5E3"/>
+        <rect x="96" y="132" width="70" height="5" rx="2.5" fill="#CBD5E3"/>
+        <path d="M96 158c8-8 14 4 22-4s12 4 18-2" fill="none" stroke="#152F70" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="178" cy="172" r="17" fill="#178A4E"/>
+        <path d="M170 172l6 6 11-12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></div>
+      <span class="step-num">Step 2</span>
+      <h3>We make a fair offer</h3>
+      <p><b>We walk through the house with you.</b> No cleaning or repairs needed. Then you get a written, no-obligation cash offer, and we explain exactly how we got the number. Take all the time you need.</p>
+      <span class="step-when"><svg class="i" aria-hidden="true"><use href="#i-file-text"/></svg><span data-fill="offerSpeed"></span></span>
+    </li>
+    <li class="step-card">
+      <div class="art"><svg viewBox="0 0 360 220" aria-hidden="true">
+        <path d="M46 146C30 90 76 44 140 42c46-1 64 16 106 12 50-5 86 26 78 76-8 48-54 62-110 62H112c-36 0-58-16-66-46z" fill="#EDF2FA"/>
+        <line x1="34" y1="184" x2="326" y2="184" stroke="#CBD5E3" stroke-width="4" stroke-linecap="round"/>
+        <rect x="126" y="100" width="120" height="84" fill="#fff" stroke="#152F70" stroke-width="3"/>
+        <path d="M112 104l74-54 74 54z" fill="#152F70"/>
+        <rect x="140" y="118" width="24" height="20" rx="2" fill="#D6E3F6" stroke="#152F70" stroke-width="2.5"/>
+        <rect x="208" y="118" width="24" height="20" rx="2" fill="#D6E3F6" stroke="#152F70" stroke-width="2.5"/>
+        <rect x="174" y="142" width="24" height="42" rx="2" fill="#E06A1F"/>
+        <rect x="82" y="118" width="5" height="66" fill="#152F70"/>
+        <rect x="56" y="112" width="58" height="10" rx="2" fill="#152F70"/>
+        <rect x="58" y="126" width="54" height="28" rx="4" fill="#E06A1F"/>
+        <text x="85" y="146" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="15" fill="#fff" letter-spacing="1">SOLD</text>
+        <g transform="rotate(24 292 96)">
+          <circle cx="292" cy="62" r="15" fill="none" stroke="#152F70" stroke-width="6"/>
+          <rect x="289" y="76" width="7" height="50" rx="3" fill="#152F70"/>
+          <rect x="296" y="106" width="10" height="6" fill="#152F70"/><rect x="296" y="116" width="7" height="6" fill="#152F70"/>
+          <rect x="268" y="44" width="16" height="24" rx="3" fill="#E06A1F" transform="rotate(-30 276 56)"/>
+        </g>
+      </svg></div>
+      <span class="step-num">Step 3</span>
+      <h3>Close and get paid</h3>
+      <p><b>A licensed Houston title company handles the paperwork</b> and pays you at closing. In some cases we can close in as little as 2 days once title is clear, or later if you need time to move. We never ask you for money.</p>
+      <span class="step-when"><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg>On the date you choose</span>
+    </li>
+  </ol>
+  <div class="steps-foot">
+    <a class="btn" data-tel href="#offer"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call <span data-fill="phone"></span></a>
+    <p>Not interested? Tell us on the phone or email <span data-fill="email"></span>, and we'll take you off our list right away.</p>
   </div>
 </div></section>
 
@@ -418,17 +483,8 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   <div class="center-cta"><a class="btn" href="#offer">Get my cash offer</a></div>
 </div></section>
 
-<section class="sec" id="how"><div class="wrap">
-  <div class="sec-head center"><h2>How it works</h2><p>Four simple steps. You can stop at any point, with no cost and no obligation.</p></div>
-  <ol class="timeline">
-    <li><span class="num"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><div class="body"><span class="when">About 10 to 15 minutes</span><h3>Quick call</h3><p>Fill out the form or call us. We'll ask a few questions about the house and what you need, and set up a time to see it.</p></div></li>
-    <li><span class="num"><svg aria-hidden="true"><use href="#i-house"/></svg></span><div class="body"><span class="when">At a time that works for you</span><h3>We see the house</h3><p>We walk through the house with you. No need to clean or fix anything, and family members are welcome.</p><p class="tip"><b>Good to know:</b> this is your chance to ask us anything. We'll explain exactly how the sale works.</p></div></li>
-    <li><span class="num"><svg aria-hidden="true"><use href="#i-file-text"/></svg></span><div class="body"><span class="when" data-fill="offerSpeed"></span><h3>Get your written cash offer</h3><p>We give you a written, no-obligation offer and walk you through how we got the number. Take your time and talk it over with anyone you trust.</p></div></li>
-    <li><span class="num"><svg aria-hidden="true"><use href="#i-key-round"/></svg></span><div class="body"><span class="when">On the date you choose</span><h3>Close and get paid</h3><p>A licensed Houston title company handles the paperwork and pays you at closing. In some cases we can close in as little as 2 days once title is clear, or later if you need time to move.</p></div></li>
-  </ol>
-</div></section>
 
-<section class="sec tint" id="compare"><div class="wrap">
+<section class="sec" id="compare"><div class="wrap">
   <div class="sec-head center"><h2>Selling to us vs. listing with an agent</h2><p>Both are good options for different people. Here's an honest side-by-side.</p></div>
   <div class="compare">
     <div class="col us">
@@ -536,7 +592,7 @@ var SITE = {
   phone: "(346) 517-2534",
   email: "contact@cx2homebuyers.com",
   hours: "Mon to Sat, 9am to 7pm",
-  offerSpeed: "Usually within a day or two of seeing the house",
+  offerSpeed: "Offer usually within a day or two",
   story: [                     // one string per paragraph
     "I grew up in Lufkin, in deep East Texas, and started in real estate when I was 16. My first deal was with a family in Dallas who had inherited a house that needed a lot of work and came with tens of thousands of dollars in back taxes they couldn't pay.",
     "I connected them with a cash buyer I knew who was looking for a house to restore in that neighborhood. We set it up so the back taxes were paid off at closing, the family walked away with the amount they needed, and the buyer brought the house back to life. Everyone came out ahead, and that's when I knew this was what I wanted to do.",
