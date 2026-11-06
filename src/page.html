@@ -125,13 +125,13 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 .hero-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:62% 40%}
 
 /* trust bar */
-.trustbar{background:#fff;border-bottom:1px solid var(--line)}
+.trustbar{background:var(--navy);color:#fff}
 .trustbar ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.trustbar li{display:flex;gap:14px;align-items:center;padding:24px 18px;border-left:1px solid var(--line)}
+.trustbar li{display:flex;gap:14px;align-items:center;padding:24px 18px;border-left:1px solid rgba(255,255,255,.16)}
 .trustbar li:first-child{border-left:0;padding-left:0}
-.trustbar .ic{width:48px;height:48px;border-radius:50%;background:var(--orange-soft);color:var(--orange);display:grid;place-items:center;flex:none}
+.trustbar .ic{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);color:#FF9A5A;display:grid;place-items:center;flex:none}
 .trustbar b{display:block;font-size:1.05rem;line-height:1.2}
-.trustbar small{color:var(--muted);font-size:.88rem}
+.trustbar small{color:var(--on-dark-muted);font-size:.88rem;line-height:1.4;display:block;margin-top:3px}
 
 /* photo slots */
 .photo{position:relative;border-radius:var(--r);overflow:hidden;background:var(--bg-2);aspect-ratio:4/3;max-width:100%}
@@ -269,8 +269,8 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   .addr-row{flex-direction:column}
   .hero-photo .frame{aspect-ratio:1/1}
   .row2,.ob-cards,.sits,.compare,.reviews,.foot-grid{grid-template-columns:1fr}
-  .trustbar ul{grid-template-columns:1fr}
-  .trustbar li{padding:14px 0;border-top:1px solid var(--line)}
+  .trustbar ul{grid-template-columns:1fr;padding-block:10px}
+  .trustbar li{padding:14px 0;border-top:1px solid rgba(255,255,255,.16)}
   .trustbar li:first-child{border-top:0}
   .timeline li{grid-template-columns:52px minmax(0,1fr);gap:14px}
   .timeline .num{width:52px;height:52px}
