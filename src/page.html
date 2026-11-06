@@ -62,10 +62,6 @@ p{margin:0}
 .preview .wrap{padding-block:8px}
 
 /* top bar + header */
-.topbar{background:var(--navy);color:var(--on-dark-muted);font-size:.9rem}
-.topbar .wrap{display:flex;justify-content:space-between;gap:6px 20px;flex-wrap:wrap;padding-block:8px}
-.topbar a{color:#fff;font-weight:700;text-decoration:none}
-.topbar span{display:inline-flex;align-items:center;gap:8px}
 header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:#fff;box-shadow:0 1px 0 var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#fff;z-index:41}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
@@ -273,8 +269,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 }
 @media (max-width:640px){
   body{font-size:16.5px;padding-bottom:calc(74px + env(safe-area-inset-bottom,0px))}
-  .head-cta .btn,.topbar .hours{display:none}
-  .head-phone span.num{display:none}
+  .head-cta .btn,  .head-phone span.num{display:none}
   .head-phone{width:44px;height:44px;border-radius:50%;background:var(--orange-soft);justify-content:center}
   .addr-row{flex-direction:column}
   .hero-photo .frame{aspect-ratio:1/1}
@@ -299,11 +294,6 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 <a class="skip" href="#top">Skip to main content</a>
 
 <div class="preview" id="previewBar"><div class="wrap">Preview: the form doesn't send anything until the site is live on your domain.</div></div>
-
-<div class="topbar"><div class="wrap">
-  <span><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>Locally owned in Houston, Texas</span>
-  <span class="hours"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span data-fill="hours"></span></span>
-</div></div>
 
 <header class="site"><div class="wrap">
   <a class="logo" href="#top" aria-label="Cx2 Homebuyers home">
