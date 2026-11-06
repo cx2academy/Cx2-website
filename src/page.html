@@ -9,14 +9,14 @@
 <meta property="og:description" content="Get a fair, no-obligation cash offer from a local, owner-run Houston company. No repairs, no commissions, no closing costs.">
 <meta property="og:image" content="https://cx2homebuyers.com/logo-512.png">
 <meta name="description" content="Sell your house fast in Houston. Get a fair, no-obligation cash offer from a local, owner-run company. No repairs, no commissions, no closing costs, and you pick the closing date.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&display=swap">
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Archivo is self-hosted (SIL Open Font License, see fonts/OFL.txt), so no visitor data goes to Google Fonts */
+@font-face{font-family:"Archivo";font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url("fonts/archivo.woff2") format("woff2-variations"),url("fonts/archivo.woff2") format("woff2")}
 /* Layout: the proven Houston cash-buyer landing page (navy hero with offer form, trust bar, outbound reassurance, owner, situations, 4-step timeline, comparison, areas, FAQ, closing CTA). Single light look like the reference sites; navy for trust, orange for every action. */
 :root{
   --navy:#152F70; --navy-2:#1D3B86; --navy-3:#2C4F9E;
-  --orange:#D9560B; --orange-hover:#C24A06; --orange-soft:#FDEBDD;
+  --orange:#BF4A08; --orange-hover:#A23E05; --orange-soft:#FDEBDD;
   --bg:#FFFFFF; --bg-2:#F2F6FA; --ink:#13243A; --muted:#4F6177; --line:#DCE4EC;
   --green:#178A4E; --red:#B4382F; --on-dark:#FFFFFF; --on-dark-muted:#C3CEE8;
   --font:"Archivo","Arial Narrow",Arial,Helvetica,sans-serif;
@@ -43,6 +43,8 @@ p{margin:0}
 .sec-head.center{margin-inline:auto;text-align:center;justify-items:center}
 .sec-head p{font-size:1.12rem;color:var(--muted)}
 :focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;font-weight:700;padding:10px 16px;border-radius:var(--r-s);text-decoration:none}
+.skip:focus{top:12px}
 .ph{background:#FFF4D6;outline:1px dashed #C89211;border-radius:4px;padding:0 .25em;color:#5A4300!important}
 
 /* buttons */
@@ -112,7 +114,9 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 .addr input{padding-left:44px;font-size:1.05rem;padding-block:14px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.78rem;line-height:1.45;color:var(--muted)}
+.consent a{color:var(--navy-3)}
 .consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--navy)}
+.fine{font-size:.78rem;line-height:1.45;color:var(--muted)}
 .back{background:none;border:0;font:inherit;font-size:.9rem;color:var(--navy-3);text-decoration:underline;cursor:pointer;padding:0}
 .hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.93rem;color:var(--muted)}
 .hero-meta span{display:inline-flex;gap:7px;align-items:center}
@@ -239,15 +243,14 @@ footer .wrap{padding-block:48px 36px;display:grid;gap:30px}
 .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
 footer .logo{color:#fff}
 footer .logo small{color:var(--on-dark-muted)}
-footer h4{margin:0 0 10px;color:#fff;font-size:1rem}
+footer h3{margin:0 0 10px;color:#fff;font-size:1rem;font-weight:700;line-height:1.3}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 footer a{color:var(--on-dark-muted);text-decoration:none}
 footer a:hover{color:#fff}
 footer .contact li{display:flex;gap:8px;align-items:center}
 footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:grid;gap:12px;font-size:.82rem;line-height:1.6}
-.legal details summary{cursor:pointer;color:#fff;font-weight:600}
-.legal details p{margin-top:8px}
+.legal a{color:#fff;text-decoration:underline}
 
 /* mobile bar */
 .mbar{display:none}
@@ -290,11 +293,13 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 
 {{ICONS}}
 
+<a class="skip" href="#top">Skip to main content</a>
+
 <div class="preview" id="previewBar"><div class="wrap">Preview: the form doesn't send anything until the site is live on your domain.</div></div>
 
 <div class="topbar"><div class="wrap">
-  <span><svg class="i"><use href="#i-map-pin"/></svg>Locally owned in Houston, Texas</span>
-  <span class="hours"><svg class="i"><use href="#i-clock"/></svg><span data-fill="hours"></span></span>
+  <span><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>Locally owned in Houston, Texas</span>
+  <span class="hours"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span data-fill="hours"></span></span>
 </div></div>
 
 <header class="site"><div class="wrap">
@@ -309,12 +314,12 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
     <a href="#faq">FAQ</a>
   </nav>
   <div class="head-cta">
-    <a class="head-phone" data-tel href="#offer" aria-label="Call us"><svg class="i"><use href="#i-phone"/></svg><span class="num" data-fill="phone"></span></a>
+    <a class="head-phone" data-tel href="#offer" aria-label="Call us"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span class="num" data-fill="phone"></span></a>
     <a class="btn" href="#offer">Get my cash offer</a>
   </div>
 </div></header>
 
-<main id="top">
+<main id="top" tabindex="-1">
 <section class="hero" id="offer">
   <div class="wrap">
     <div class="hero-copy">
@@ -323,12 +328,12 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
         <p class="sub">Get a fair, no-obligation cash offer for your house as-is. No repairs, no agent commissions, no closing costs, and you pick the closing date.</p>
       </div>
       <ul class="sits-mini" aria-label="Common reasons Houston homeowners call us">
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Inherited a house</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Behind on payments</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Costly repairs needed</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Divorce or family change</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Tired of being a landlord</li>
-        <li><span class="tick"><svg><use href="#i-check"/></svg></span>Need to move fast</li>
+        <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Inherited a house</li>
+        <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Behind on payments</li>
+        <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Costly repairs needed</li>
+        <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Divorce or family change</li>
+        <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Tired of being a landlord</li>
+        <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Need to move fast</li>
       </ul>
       <div class="hero-form">
         <form name="offer" method="POST" data-netlify="true" netlify-honeypot="company" id="offerForm" novalidate>
@@ -337,13 +342,13 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
           <div class="step" id="step1">
             <label class="lead" for="f-address">Enter your address to get your no-obligation cash offer:</label>
             <div class="addr-row">
-              <div class="addr"><svg class="i"><use href="#i-map-pin"/></svg><input id="f-address" name="address" autocomplete="street-address" required placeholder="Enter your property address"></div>
+              <div class="addr"><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg><input id="f-address" name="address" autocomplete="street-address" required placeholder="Enter your property address"></div>
               <button class="btn" type="button" id="next">Get my cash offer</button>
             </div>
           </div>
           <div class="step2" id="step2" hidden>
             <div class="step-top"><b>Almost done. Where should we send your offer?</b><button class="back" type="button" id="back">Change address</button></div>
-            <p class="recap"><svg class="i"><use href="#i-map-pin"/></svg><span id="addrRecap"></span></p>
+            <p class="recap"><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg><span id="addrRecap"></span></p>
             <div class="row2">
               <label>Full name<input id="f-name" name="name" autocomplete="name"></label>
               <label>Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
@@ -357,18 +362,19 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
                 <select id="f-condition" name="condition"><option value="">Choose one</option><option>Move-in ready</option><option>Needs some work</option><option>Needs major repairs</option><option>Not sure</option></select>
               </label>
             </div>
-            <label class="consent"><input type="checkbox" id="f-sms" name="sms_consent" value="yes"><span>Optional: Cx2 Homebuyers may text me about my property at this number. Message frequency varies. Msg and data rates may apply. Reply STOP to opt out. Consent is not required to get an offer.</span></label>
+            <label class="consent"><input type="checkbox" id="f-sms" name="sms_consent" value="yes"><span>Optional: Cx2 Homebuyers may text me about my property at this number. Message frequency varies. Msg and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not required to get an offer. See our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Terms</a>.</span></label>
             <button class="btn" type="submit">Send my offer request</button>
+            <p class="fine">By sending this, you agree that Cx2 Homebuyers may call you at the number above about your property. You can ask us to stop at any time.</p>
           </div>
         </form>
         <div class="thanks" id="thanks" hidden>
-          <p class="big"><svg class="i"><use href="#i-circle-check-big"/></svg>Request received</p>
+          <p class="big"><svg class="i" aria-hidden="true"><use href="#i-circle-check-big"/></svg>Request received</p>
           <p>Thank you. <span data-fill="owner"></span> will call you within one business day. If it's urgent, call <span data-fill="phone"></span>.</p>
         </div>
         <div class="hero-meta">
-          <span class="call"><svg class="i"><use href="#i-phone"/></svg>Prefer to talk? <a data-tel data-fill="phone" href="#offer"></a></span>
-          <span><svg class="i"><use href="#i-circle-check-big"/></svg>No obligation</span>
-          <span><svg class="i"><use href="#i-shield-check"/></svg>Your info is never sold</span>
+          <span class="call"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Prefer to talk? <a data-tel data-fill="phone" href="#offer"></a></span>
+          <span><svg class="i" aria-hidden="true"><use href="#i-circle-check-big"/></svg>No obligation</span>
+          <span><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg>Your info is never sold</span>
         </div>
       </div>
     </div>
@@ -380,24 +386,24 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 </section>
 
 <section class="trustbar" aria-label="Why sellers choose us"><div class="wrap"><ul>
-  <li><span class="ic"><svg class="i"><use href="#i-hand-coins"/></svg></span><span><b>$0 commissions</b><small>And no closing costs</small></span></li>
-  <li><span class="ic"><svg class="i"><use href="#i-wrench"/></svg></span><span><b>No repairs</b><small>Sell it exactly as it is</small></span></li>
-  <li><span class="ic"><svg class="i"><use href="#i-calendar-check"/></svg></span><span><b>You pick the date</b><small>Close fast or take your time</small></span></li>
-  <li><span class="ic"><svg class="i"><use href="#i-landmark"/></svg></span><span><b>Local title company</b><small>Licensed, and handles the money</small></span></li>
+  <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-hand-coins"/></svg></span><span><b>$0 commissions</b><small>And no closing costs</small></span></li>
+  <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-wrench"/></svg></span><span><b>No repairs</b><small>Sell it exactly as it is</small></span></li>
+  <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg></span><span><b>You pick the date</b><small>Close fast or take your time</small></span></li>
+  <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-landmark"/></svg></span><span><b>Local title company</b><small>Licensed, and handles the money</small></span></li>
 </ul></div></section>
 
 <section class="sec tint" id="contacted"><div class="wrap ob">
   <div class="sec-head" style="margin-bottom:0">
-    <span class="ob-badge"><svg class="i"><use href="#i-phone"/></svg>Did we call you or send you a letter?</span>
+    <span class="ob-badge"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Did we call you or send you a letter?</span>
     <h2>Yes, that was us. Here's who we are.</h2>
     <p>We reach out to Houston homeowners whose houses may be a fit for a quick, as-is sale. It's normal to want to check us out first, so here's what you should know.</p>
-    <a class="btn navy" data-tel href="#offer" style="justify-self:start"><svg class="i"><use href="#i-phone"/></svg>Call <span data-fill="phone"></span></a>
+    <a class="btn navy" data-tel href="#offer" style="justify-self:start"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call <span data-fill="phone"></span></a>
   </div>
   <div class="ob-cards">
-    <div><span class="ic"><svg class="i"><use href="#i-search-check"/></svg></span><h3>How we found you</h3><p>From public property records, like county appraisal district data, and data services that compile contact details from public sources.</p></div>
-    <div><span class="ic"><svg class="i"><use href="#i-ban"/></svg></span><h3>We never ask for money</h3><p>No fees, deposits, bank details or Social Security numbers. The title company handles all of that at closing.</p></div>
-    <div><span class="ic"><svg class="i"><use href="#i-shield-check"/></svg></span><h3>We're a real Texas company</h3><p>Cx2 Homebuyers LLC is registered in Texas, and every sale closes at a licensed Houston title company.</p></div>
-    <div><span class="ic"><svg class="i"><use href="#i-x"/></svg></span><h3>Want us to stop?</h3><p>Tell us on the phone or email <span data-fill="email"></span>, and we'll take you off our list right away.</p></div>
+    <div><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-search-check"/></svg></span><h3>How we found you</h3><p>From public property records, like county appraisal district data, and data services that compile contact details from public sources.</p></div>
+    <div><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-ban"/></svg></span><h3>We never ask for money</h3><p>No fees, deposits, bank details or Social Security numbers. The title company handles all of that at closing.</p></div>
+    <div><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg></span><h3>We're a real Texas company</h3><p>Cx2 Homebuyers LLC is registered in Texas, and every sale closes at a licensed Houston title company.</p></div>
+    <div><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span><h3>Want us to stop?</h3><p>Tell us on the phone or email <span data-fill="email"></span>, and we'll take you off our list right away.</p></div>
   </div>
 </div></section>
 
@@ -414,14 +420,14 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 <section class="sec tint" id="situations"><div class="wrap">
   <div class="sec-head center"><h2>We buy houses in any situation</h2><p>Whatever you're going through, we've likely seen it before. There's no judgment here, just options.</p></div>
   <div class="sits">
-    <div class="sit"><span class="ic"><svg><use href="#i-landmark"/></svg></span><h3>Facing foreclosure</h3><p>Behind on payments and need a way out before the sale date.</p></div>
-    <div class="sit"><span class="ic"><svg><use href="#i-key-round"/></svg></span><h3>Inherited a house</h3><p>Probate or a family home you don't want to manage or repair.</p></div>
-    <div class="sit"><span class="ic"><svg><use href="#i-hammer"/></svg></span><h3>Major repairs</h3><p>Foundation, roof, plumbing, or a house that needs everything.</p></div>
-    <div class="sit"><span class="ic"><svg><use href="#i-droplets"/></svg></span><h3>Flood or fire damage</h3><p>Storm, flood, fire or mold damage you can't take on.</p></div>
-    <div class="sit"><span class="ic"><svg><use href="#i-users-round"/></svg></span><h3>Tired landlord</h3><p>Problem tenants, vacancies, or rentals that cost more than they make.</p></div>
-    <div class="sit"><span class="ic"><svg><use href="#i-heart-crack"/></svg></span><h3>Divorce</h3><p>A quick, clean sale so everyone can move forward.</p></div>
-    <div class="sit"><span class="ic"><svg><use href="#i-briefcase-business"/></svg></span><h3>Relocating</h3><p>A new job or a move, and no time to list and wait.</p></div>
-    <div class="sit"><span class="ic"><svg><use href="#i-badge-dollar-sign"/></svg></span><h3>Back taxes or liens</h3><p>Past-due property taxes, liens or code violations.</p></div>
+    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-landmark"/></svg></span><h3>Facing foreclosure</h3><p>Behind on payments and need a way out before the sale date.</p></div>
+    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-key-round"/></svg></span><h3>Inherited a house</h3><p>Probate or a family home you don't want to manage or repair.</p></div>
+    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-hammer"/></svg></span><h3>Major repairs</h3><p>Foundation, roof, plumbing, or a house that needs everything.</p></div>
+    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-droplets"/></svg></span><h3>Flood or fire damage</h3><p>Storm, flood, fire or mold damage you can't take on.</p></div>
+    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-users-round"/></svg></span><h3>Tired landlord</h3><p>Problem tenants, vacancies, or rentals that cost more than they make.</p></div>
+    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-heart-crack"/></svg></span><h3>Divorce</h3><p>A quick, clean sale so everyone can move forward.</p></div>
+    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-briefcase-business"/></svg></span><h3>Relocating</h3><p>A new job or a move, and no time to list and wait.</p></div>
+    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-badge-dollar-sign"/></svg></span><h3>Back taxes or liens</h3><p>Past-due property taxes, liens or code violations.</p></div>
   </div>
   <div class="center-cta"><a class="btn" href="#offer">Get my cash offer</a></div>
 </div></section>
@@ -429,10 +435,10 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 <section class="sec" id="how"><div class="wrap">
   <div class="sec-head center"><h2>How it works</h2><p>Four simple steps. You can stop at any point, with no cost and no obligation.</p></div>
   <ol class="timeline">
-    <li><span class="num"><svg><use href="#i-phone"/></svg></span><div class="body"><span class="when">About 10 to 15 minutes</span><h3>Quick call</h3><p>Fill out the form or call us. We'll ask a few questions about the house and what you need, and set up a time to see it.</p></div></li>
-    <li><span class="num"><svg><use href="#i-house"/></svg></span><div class="body"><span class="when">At a time that works for you</span><h3>We see the house</h3><p>We walk through the house with you. No need to clean or fix anything, and family members are welcome.</p><p class="tip"><b>Good to know:</b> this is your chance to ask us anything. We'll explain exactly how the sale works.</p></div></li>
-    <li><span class="num"><svg><use href="#i-file-text"/></svg></span><div class="body"><span class="when" data-fill="offerSpeed"></span><h3>Get your written cash offer</h3><p>We give you a written, no-obligation offer and walk you through how we got the number. Take your time and talk it over with anyone you trust.</p></div></li>
-    <li><span class="num"><svg><use href="#i-key-round"/></svg></span><div class="body"><span class="when">On the date you choose</span><h3>Close and get paid</h3><p>A licensed Houston title company handles the paperwork and pays you at closing. In some cases we can close in as little as 2 days once title is clear, or later if you need time to move.</p></div></li>
+    <li><span class="num"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><div class="body"><span class="when">About 10 to 15 minutes</span><h3>Quick call</h3><p>Fill out the form or call us. We'll ask a few questions about the house and what you need, and set up a time to see it.</p></div></li>
+    <li><span class="num"><svg aria-hidden="true"><use href="#i-house"/></svg></span><div class="body"><span class="when">At a time that works for you</span><h3>We see the house</h3><p>We walk through the house with you. No need to clean or fix anything, and family members are welcome.</p><p class="tip"><b>Good to know:</b> this is your chance to ask us anything. We'll explain exactly how the sale works.</p></div></li>
+    <li><span class="num"><svg aria-hidden="true"><use href="#i-file-text"/></svg></span><div class="body"><span class="when" data-fill="offerSpeed"></span><h3>Get your written cash offer</h3><p>We give you a written, no-obligation offer and walk you through how we got the number. Take your time and talk it over with anyone you trust.</p></div></li>
+    <li><span class="num"><svg aria-hidden="true"><use href="#i-key-round"/></svg></span><div class="body"><span class="when">On the date you choose</span><h3>Close and get paid</h3><p>A licensed Houston title company handles the paperwork and pays you at closing. In some cases we can close in as little as 2 days once title is clear, or later if you need time to move.</p></div></li>
   </ol>
 </div></section>
 
@@ -440,25 +446,25 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   <div class="sec-head center"><h2>Selling to us vs. listing with an agent</h2><p>Both are good options for different people. Here's an honest side-by-side.</p></div>
   <div class="compare">
     <div class="col us">
-      <h3><svg class="i"><use href="#i-house"/></svg>Cx2 Homebuyers</h3>
+      <h3><svg class="i" aria-hidden="true"><use href="#i-house"/></svg>Cx2 Homebuyers</h3>
       <ul>
-        <li><svg class="i"><use href="#i-check"/></svg><span><b>Commissions</b>None</span></li>
-        <li><svg class="i"><use href="#i-check"/></svg><span><b>Closing costs</b>Paid by the buyer</span></li>
-        <li><svg class="i"><use href="#i-check"/></svg><span><b>Repairs and cleaning</b>None, sell it as-is</span></li>
-        <li><svg class="i"><use href="#i-check"/></svg><span><b>Showings</b>One walk-through</span></li>
-        <li><svg class="i"><use href="#i-check"/></svg><span><b>Financing</b>Cash buyer, no bank approval needed</span></li>
-        <li><svg class="i"><use href="#i-check"/></svg><span><b>Closing date</b>You choose it</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><b>Commissions</b>None</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><b>Closing costs</b>Paid by the buyer</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><b>Repairs and cleaning</b>None, sell it as-is</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><b>Showings</b>One walk-through</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><b>Financing</b>Our buyers don't need mortgage approval to close</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><b>Closing date</b>You choose it</span></li>
       </ul>
     </div>
     <div class="col them">
       <h3>Listing with an agent</h3>
       <ul>
-        <li><svg class="i"><use href="#i-x"/></svg><span><b>Commissions</b>Agent commissions, negotiated with your agent</span></li>
-        <li><svg class="i"><use href="#i-x"/></svg><span><b>Closing costs</b>Sellers usually pay a share</span></li>
-        <li><svg class="i"><use href="#i-x"/></svg><span><b>Repairs and cleaning</b>Often needed to sell or pass inspection</span></li>
-        <li><svg class="i"><use href="#i-x"/></svg><span><b>Showings</b>Showings and open houses</span></li>
-        <li><svg class="i"><use href="#i-x"/></svg><span><b>Financing</b>Most buyers need a loan, which can fall through</span></li>
-        <li><svg class="i"><use href="#i-x"/></svg><span><b>Closing date</b>Depends on finding a buyer</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-x"/></svg><span><b>Commissions</b>Agent commissions, negotiated with your agent</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-x"/></svg><span><b>Closing costs</b>Sellers usually pay a share</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-x"/></svg><span><b>Repairs and cleaning</b>Often needed to sell or pass inspection</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-x"/></svg><span><b>Showings</b>Showings and open houses</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-x"/></svg><span><b>Financing</b>Most buyers need a loan, which can fall through</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-x"/></svg><span><b>Closing date</b>Depends on finding a buyer</span></li>
       </ul>
     </div>
   </div>
@@ -481,15 +487,15 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 <section class="sec" id="faq"><div class="wrap">
   <div class="sec-head center"><h2>Frequently asked questions</h2></div>
   <div class="faq">
-    <details><summary>Is Cx2 Homebuyers legit?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>Yes. Cx2 Homebuyers LLC is a registered Texas company based in Houston, and every sale closes at a licensed Texas title company that holds the money and handles the paperwork. We never ask you for upfront fees, deposits or bank details. You're welcome to have a family member, attorney or agent review our offer before you sign.</p></details>
-    <details><summary>How do you determine your offer?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>We look at what similar houses nearby have recently sold for, then account for the repairs your house needs and the costs of buying, fixing and reselling it. We'll walk you through the numbers when we give you the offer.</p></details>
-    <details><summary>Are there any fees or commissions?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>No. You don't pay any commissions or fees, and the buyer pays the normal closing costs.</p></details>
-    <details><summary>How fast can you close?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>It depends mostly on the title company clearing title. In some cases we can close in as little as 2 days once title is clear. If you need more time to move, you can pick a later date.</p></details>
-    <details><summary>Do I need to make repairs or clean the house?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>No. We buy houses as-is. Take what you want and leave the rest.</p></details>
-    <details><summary>Can I sell if I'm behind on payments or have liens?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>Often, yes. The title company pays off your mortgage and any liens from the sale proceeds. The sooner you reach out, the more options you'll have.</p></details>
-    <details><summary>Who actually buys my house?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>We sign a purchase contract with you, and in many cases we assign that contract to one of the local cash investors we work with, who closes at the title company. We're paid a fee for arranging the sale. Texas law requires us to tell you this in writing before you sign, and we'll walk you through it.</p></details>
-    <details><summary>Are you real estate agents?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>No. We're not licensed agents and we don't represent you. You're always free to have your own agent or attorney review anything we send.</p></details>
-    <details><summary>Am I obligated to accept your offer?<svg class="i"><use href="#i-chevron-down"/></svg></summary><p>Not at all. Our offers are free and come with no obligation. If it doesn't work for you, that's completely fine.</p></details>
+    <details><summary>Is Cx2 Homebuyers legit?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>Yes. Cx2 Homebuyers LLC is a registered Texas company based in Houston, and every sale closes at a licensed Texas title company that holds the money and handles the paperwork. We never ask you for upfront fees, deposits or bank details. You're welcome to have a family member, attorney or agent review our offer before you sign.</p></details>
+    <details><summary>How do you determine your offer?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>We look at what similar houses nearby have recently sold for, then account for the repairs your house needs and the costs of buying, fixing and reselling it. We'll walk you through the numbers when we give you the offer.</p></details>
+    <details><summary>Are there any fees or commissions?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>No. You don't pay any commissions or fees, and the buyer pays the normal closing costs.</p></details>
+    <details><summary>How fast can you close?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>It depends mostly on the title company clearing title. In some cases we can close in as little as 2 days once title is clear. If you need more time to move, you can pick a later date.</p></details>
+    <details><summary>Do I need to make repairs or clean the house?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>No. We buy houses as-is. Take what you want and leave the rest.</p></details>
+    <details><summary>Can I sell if I'm behind on payments or have liens?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>Often, yes. The title company pays off your mortgage and any liens from the sale proceeds. The sooner you reach out, the more options you'll have.</p></details>
+    <details><summary>Who actually buys my house?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>We sign a purchase contract with you, and in many cases we assign that contract to one of the local cash investors we work with, who closes at the title company. We're paid a fee for arranging the sale. Texas law requires us to tell you this in writing before you sign, and we'll walk you through it.</p></details>
+    <details><summary>Are you real estate agents?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>No. We're not licensed agents and we don't represent you. You're always free to have your own agent or attorney review anything we send.</p></details>
+    <details><summary>Am I obligated to accept your offer?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>Not at all. Our offers are free and come with no obligation. If it doesn't work for you, that's completely fine.</p></details>
   </div>
 </div></section>
 
@@ -500,7 +506,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   </div>
   <div>
     <form id="finalForm">
-      <div class="addr"><svg class="i"><use href="#i-map-pin"/></svg><input id="f-address-2" aria-label="Property address" autocomplete="street-address" placeholder="Enter your property address"></div>
+      <div class="addr"><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg><input id="f-address-2" aria-label="Property address" autocomplete="street-address" placeholder="Enter your property address"></div>
       <button class="btn" type="submit">Get my offer</button>
     </form>
     <p class="call-line">Or call or text <a data-tel data-fill="phone" href="#offer"></a></p>
@@ -514,26 +520,25 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
       <a class="logo" href="#top"><span class="logo-mark"><svg viewBox="0 0 192 192" aria-hidden="true"><use href="#logo"/></svg></span><span><b>Cx2 Homebuyers</b><small>Houston cash home buyers</small></span></a>
       <p>A local, owner-run company helping Houston homeowners sell houses as-is, on their timeline.</p>
     </div>
-    <div><h4>Contact</h4><ul class="contact">
-      <li><svg class="i"><use href="#i-phone"/></svg><a data-tel data-fill="phone" href="#offer"></a></li>
-      <li><svg class="i"><use href="#i-mail"/></svg><span data-fill="email"></span></li>
-      <li><svg class="i"><use href="#i-clock"/></svg><span data-fill="hours"></span></li>
-      <li><svg class="i"><use href="#i-map-pin"/></svg>Serving Greater Houston, TX</li>
+    <div><h3>Contact</h3><ul class="contact">
+      <li><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><a data-tel data-fill="phone" href="#offer"></a></li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span data-fill="email"></span></li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span data-fill="hours"></span></li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>Serving Greater Houston, TX</li>
     </ul></div>
-    <div><h4>Quick links</h4><ul>
-      <li><a href="#how">How it works</a></li><li><a href="#about">About us</a></li><li><a href="#areas">Areas we serve</a></li><li><a href="#faq">FAQ</a></li><li><a href="#privacy">Privacy policy</a></li>
+    <div><h3>Quick links</h3><ul>
+      <li><a href="#how">How it works</a></li><li><a href="#about">About us</a></li><li><a href="#areas">Areas we serve</a></li><li><a href="#faq">FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="terms.html">Terms of use</a></li>
     </ul></div>
   </div>
   <div class="legal">
-    <p>Cx2 Homebuyers LLC is not a licensed real estate broker or agent and does not represent buyers or sellers. We contract to purchase real property and may sell or assign our contract or equitable interest to another buyer. As required by Texas law (Tex. Occ. Code &sect;1101.0045; Tex. Prop. Code &sect;5.0205), we disclose the nature of our interest in writing to the property owner before entering a contract and to any potential buyer. Offers are typically below full market value in exchange for speed, convenience and buying as-is. "Cash" means no bank financing is needed to buy; it does not guarantee closing, which depends on title and the contract terms. Nothing on this site is legal, tax or financial advice.</p>
+    <p>Cx2 Homebuyers LLC is not a licensed real estate broker or agent and does not represent buyers or sellers. We contract to purchase real property and may sell or assign our contract or equitable interest to another buyer. As required by Texas law (Tex. Occ. Code &sect;1101.0045; Tex. Prop. Code &sect;5.0205), we disclose the nature of our interest in writing to the property owner before entering a contract and to any potential buyer. Offers are typically below full market value in exchange for speed, convenience and buying as-is. "Cash" means our buyers don't need mortgage approval to buy; it does not guarantee closing, which depends on title and the contract terms. Nothing on this site is legal, tax or financial advice.</p>
     <p>Equal housing opportunity. Cx2 Homebuyers works with every homeowner regardless of race, color, religion, sex, disability, familial status or national origin.</p>
-    <details id="privacy"><summary>Privacy policy</summary><p>We collect the information you give us (such as your name, phone, email and property address) only to respond to your request and discuss selling your property. We do not sell or rent your information. We share it only as needed to evaluate or complete a sale (for example, with a title company or a buyer we assign a contract to) or when the law requires it. We text you only if you gave consent, and you can reply STOP at any time. To have your information removed or to stop contact, email <span data-fill="email"></span> or call <span data-fill="phone"></span>.</p></details>
-    <p>&copy; <span id="yr">2026</span> Cx2 Homebuyers LLC. All rights reserved.</p>
+    <p>&copy; <span id="yr">2026</span> Cx2 Homebuyers LLC. All rights reserved. <a href="privacy.html">Privacy policy</a> &middot; <a href="terms.html">Terms of use</a></p>
   </div>
 </div></footer>
 
 <div class="mbar">
-  <a class="btn navy" data-tel href="#offer"><svg class="i"><use href="#i-phone"/></svg>Call</a>
+  <a class="btn navy" data-tel href="#offer"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
   <a class="btn" href="#offer">Get my cash offer</a>
 </div>
 
@@ -545,7 +550,7 @@ var SITE = {
   phone: "(346) 517-2534",
   email: "contact@cx2homebuyers.com",
   hours: "Mon to Sat, 9am to 7pm",
-  offerSpeed: "Usually within 24 hours of seeing the house",
+  offerSpeed: "Usually within a day or two of seeing the house",
   story: [                     // one string per paragraph
     "I grew up in Lufkin, in deep East Texas, and started in real estate when I was 16. My first deal was with a family in Dallas who had inherited a house that needed a lot of work and came with tens of thousands of dollars in back taxes they couldn't pay.",
     "I connected them with a cash buyer I knew who was looking for a house to restore in that neighborhood. We set it up so the back taxes were paid off at closing, the family walked away with the amount they needed, and the buyer brought the house back to life. Everyone came out ahead, and that's when I knew this was what I wanted to do.",
@@ -569,14 +574,14 @@ var PH={owner:"Your name",phone:"Your phone",email:"Your email",hours:"Your hour
   $("[data-link]").forEach(function(el){var v=SITE[el.dataset.link];if(v){el.href=v;el.target="_blank";el.rel="noopener";}});
   $("[data-photo]").forEach(function(el){var v=SITE[el.dataset.photo];
     if(v){var im=new Image();im.src=v;im.alt=el.dataset.alt||"Photo of "+(SITE.owner||"the owner");el.appendChild(im);}
-    else{el.classList.add("empty");el.innerHTML='<span><svg class="i"><use href="#i-image"/></svg>'+el.dataset.label+'</span>';}});
+    else{el.classList.add("empty");el.innerHTML='<span><svg class="i" aria-hidden="true"><use href="#i-image"/></svg>'+el.dataset.label+'</span>';}});
   var st=document.getElementById("story");
   if(SITE.story&&SITE.story.length){SITE.story.forEach(function(t){var p=document.createElement("p");p.textContent=t;st.appendChild(p);});}
   else{var p=document.createElement("p");p.className="ph";p.textContent=PH.story;st.appendChild(p);}
   if(SITE.dealsClosed)document.getElementById("dealStat").hidden=false;
   var al=document.getElementById("areaList");
-  SITE.areas.forEach(function(a){var li=document.createElement("li");li.innerHTML='<svg class="i"><use href="#i-map-pin"/></svg>';li.appendChild(document.createTextNode(a));al.appendChild(li);});
-  if(SITE.reviews.length){var rl=document.getElementById("reviewList"),star='<svg><use href="#i-star"/></svg>';
+  SITE.areas.forEach(function(a){var li=document.createElement("li");li.innerHTML='<svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>';li.appendChild(document.createTextNode(a));al.appendChild(li);});
+  if(SITE.reviews.length){var rl=document.getElementById("reviewList"),star='<svg aria-hidden="true"><use href="#i-star"/></svg>';
     SITE.reviews.forEach(function(r){var f=document.createElement("figure");f.className="review";f.style.margin="0";
       f.innerHTML='<div class="stars" aria-label="5 out of 5 stars">'+star+star+star+star+star+'</div><blockquote style="margin:0"></blockquote><figcaption></figcaption>';
       f.querySelector("blockquote").textContent="“"+r.text+"”";
