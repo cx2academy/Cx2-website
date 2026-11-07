@@ -144,12 +144,11 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 
 /* steps (how it works) */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.5vw,28px)}
-.step-card{display:grid;gap:10px;grid-template-rows:auto auto auto 1fr auto;text-align:center;justify-items:center}
+.step-card{display:grid;gap:10px;grid-template-rows:auto auto 1fr auto;text-align:center;justify-items:center}
 .step-when{align-self:end}
 .step-card .art{width:100%;background:#fff;border-radius:16px;box-shadow:0 18px 40px -22px rgba(0,0,0,.55);padding:14px;margin-bottom:12px}
 .step-card .art svg{display:block;width:100%;height:auto}
-.step-num{font-size:.85rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#FF9A5A}
-.step-card h3{color:#fff;font-size:1.3rem}
+.step-num{font-size:1.45rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#FF9A5A;line-height:1.1;margin-bottom:2px}
 .step-card p{color:var(--on-dark-muted);max-width:36ch}
 .step-card p b{color:#fff}
 .step-when{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border-radius:999px;padding:6px 14px;margin-top:4px}
@@ -401,9 +400,8 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   <path d="M231 124q3-5 0-9M238 124q3-5 0-9" fill="none" stroke="#9FB3D1" stroke-width="2" stroke-linecap="round"/>
   <line x1="40" y1="188" x2="320" y2="188" stroke="#CBD5E3" stroke-width="4" stroke-linecap="round"/>
 </svg></div>
-      <span class="step-num">Step 1</span>
-      <h3>We reach out</h3>
-      <p><b>We contact homeowners in the areas we buy</b> using public property records, like county appraisal district data. It starts with a quick, friendly call to learn about your house and what you need.</p>
+      <h3 class="step-num">Step 1</h3>
+      <p><b>We reach out to homeowners in the areas we buy,</b> using public property records like county appraisal district data. It starts with a quick, friendly call to learn about your house and what you need.</p>
       <span class="step-when"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>About 10 to 15 minutes</span>
     </li>
     <li class="step-card">
@@ -449,9 +447,8 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 <circle cx="177" cy="124" r="6.5" fill="#A8714E"/>
 <line x1="36" y1="188" x2="324" y2="188" stroke="#CBD5E3" stroke-width="4" stroke-linecap="round"/>
 </svg></div>
-      <span class="step-num">Step 2</span>
-      <h3>We listen and lay out your options</h3>
-      <p><b>We sit down with you first, then walk the house together.</b> No cleaning or repairs needed, and we take photos as we go. Then we lay out your honest options side by side, even listing with an agent if that nets you more, and give you a written, no-obligation cash offer with the numbers behind it.</p>
+      <h3 class="step-num">Step 2</h3>
+      <p><b>We sit down and listen first, then walk the house together.</b> No cleaning or repairs needed, and we take photos as we go. Then we lay out your honest options side by side, even listing with an agent if that nets you more, and give you a written, no-obligation cash offer with the numbers behind it.</p>
       <span class="step-when"><svg class="i" aria-hidden="true"><use href="#i-file-text"/></svg><span data-fill="offerSpeed"></span></span>
     </li>
     <li class="step-card">
@@ -486,9 +483,8 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 <circle cx="150" cy="66" r="6" fill="#A8714E"/>
 <line x1="36" y1="188" x2="324" y2="188" stroke="#CBD5E3" stroke-width="4" stroke-linecap="round"/>
 </svg></div>
-      <span class="step-num">Step 3</span>
-      <h3>Close and get paid</h3>
-      <p><b>A licensed Houston title company handles the paperwork</b> and pays you at closing. In some cases we can close in as little as 2 days once title is clear, or later if you need time to move. We never ask you for money.</p>
+      <h3 class="step-num">Step 3</h3>
+      <p><b>You close at a licensed Houston title company and get paid.</b> They handle all the paperwork. In some cases we can close in as little as 2 days once title is clear, or later if you need time to move. We never ask you for money.</p>
       <span class="step-when"><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg>On the date you choose</span>
     </li>
   </ol>
