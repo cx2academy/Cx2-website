@@ -166,12 +166,16 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 .stat b{font-size:2rem;color:var(--navy);font-weight:900}
 
 /* situations */
-.sits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.sit{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;display:grid;gap:10px;align-content:start}
-.sit .ic{width:52px;height:52px;border-radius:12px;background:var(--orange-soft);color:var(--orange);display:grid;place-items:center}
-.sit .ic svg{width:26px;height:26px}
-.sit p{color:var(--muted);font-size:.95rem}
-.center-cta{display:flex;justify-content:center;margin-top:36px}
+.why{display:grid;justify-items:center;gap:0}
+.why h2{text-align:center;color:var(--ink);margin-bottom:22px}
+.why-intro{max-width:1000px;font-size:1.18rem;line-height:1.75;color:var(--ink);margin-bottom:clamp(32px,4vw,48px)}
+.why-intro em{font-style:italic}
+.why-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,40px);width:100%;max-width:840px}
+.why-list{list-style:none;margin:0;padding:34px 22px;background:#fff;border-radius:var(--r-s);box-shadow:0 6px 22px -10px rgba(21,47,112,.28);display:grid;gap:15px;align-content:start}
+.why-list li{display:flex;gap:12px;align-items:center;font-weight:600;font-size:1.02rem;color:var(--ink)}
+.why-list .ck{width:24px;height:24px;border-radius:50%;background:var(--navy);display:grid;place-items:center;flex:none}
+.why-list .ck svg{width:14px;height:14px;color:#fff;stroke-width:3.2}
+.why-cta{width:100%;max-width:620px;margin-top:clamp(32px,4vw,44px)}
 
 
 /* compare */
@@ -247,7 +251,6 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   .hero-copy{display:contents}
   .hero-head{order:1}.hero-form{order:2}.hero-photo{order:3;max-width:560px;width:100%;align-self:center}.sits-mini{order:4;border-bottom:0;padding-bottom:0}
   nav.main{display:none}
-  .sits{grid-template-columns:repeat(2,minmax(0,1fr))}
   .steps{grid-template-columns:1fr;max-width:520px;margin-inline:auto;gap:44px}
   .trustbar ul{grid-template-columns:repeat(2,minmax(0,1fr))}
   .trustbar li{border-left:0;padding-left:0}
@@ -261,7 +264,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   .head-phone{width:44px;height:44px;border-radius:50%;background:var(--orange-soft);justify-content:center}
   .addr-row{flex-direction:column}
   .hero-photo .frame{aspect-ratio:1/1}
-  .row2,.sits,.compare,.reviews,.foot-grid{grid-template-columns:1fr}
+  .row2,.why-cards,.compare,.reviews,.foot-grid{grid-template-columns:1fr}
   .trustbar ul{grid-template-columns:1fr;padding-block:11px}
   .trustbar li{padding:15.4px 0;border-top:1px solid rgba(255,255,255,.16)}
   .trustbar li:first-child{border-top:0}
@@ -529,19 +532,26 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
   </div>
 </div></section>
 
-<section class="sec tint" id="situations"><div class="wrap">
-  <div class="sec-head center"><h2>We buy houses in any situation</h2><p>Whatever you're going through, we've likely seen it before. There's no judgment here, just options.</p></div>
-  <div class="sits">
-    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-landmark"/></svg></span><h3>Facing foreclosure</h3><p>Behind on payments and need a way out before the sale date.</p></div>
-    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-key-round"/></svg></span><h3>Inherited a house</h3><p>Probate or a family home you don't want to manage or repair.</p></div>
-    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-hammer"/></svg></span><h3>Major repairs</h3><p>Foundation, roof, plumbing, or a house that needs everything.</p></div>
-    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-droplets"/></svg></span><h3>Flood or fire damage</h3><p>Storm, flood, fire or mold damage you can't take on.</p></div>
-    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-users-round"/></svg></span><h3>Tired landlord</h3><p>Problem tenants, vacancies, or rentals that cost more than they make.</p></div>
-    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-heart-crack"/></svg></span><h3>Divorce</h3><p>A quick, clean sale so everyone can move forward.</p></div>
-    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-briefcase-business"/></svg></span><h3>Relocating</h3><p>A new job or a move, and no time to list and wait.</p></div>
-    <div class="sit"><span class="ic"><svg aria-hidden="true"><use href="#i-badge-dollar-sign"/></svg></span><h3>Back taxes or liens</h3><p>Past-due property taxes, liens or code violations.</p></div>
+<section class="sec tint" id="situations"><div class="wrap why">
+  <h2>We buy houses no matter why you're selling</h2>
+  <p class="why-intro">We help homeowners in all kinds of situations sell for cash. Whether you need to sell fast during a divorce, you're working through probate, or your house needs a lot of work, we work to find a solution that fits you. <em>Whether it's a house you loved, a house you never lived in, or a house you ended up with unexpectedly, we'll make selling it as easy as possible.</em></p>
+  <div class="why-cards">
+    <ul class="why-list">
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Inherited Property or Probate</li>
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Squatters or Bad Tenants</li>
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Divorce</li>
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Liens or Title Problems</li>
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Relocation or Downsizing</li>
+    </ul>
+    <ul class="why-list">
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Foreclosure/Behind on Payments</li>
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Hoarder House</li>
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Flooded House or Mold</li>
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Back Taxes Owed</li>
+      <li><span class="ck"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Structural Issues or Major Repairs</li>
+    </ul>
   </div>
-  <div class="center-cta"><a class="btn" href="#offer">Get my cash offer</a></div>
+  <a class="btn why-cta" href="#offer">Get my cash offer now</a>
 </div></section>
 
 
