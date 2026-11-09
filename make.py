@@ -82,8 +82,7 @@ def prerender(body):
 def business_data():
     ld = {"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Cx2 Homebuyers LLC",
           "description": "Local, owner-run Houston company that makes as-is cash offers on houses in Greater Houston.",
-          "areaServed": [{"@type": "AdministrativeArea", "name": c + " County, TX"} for c in SITE.get("counties", [])]
-                        + [{"@type": "City", "name": a + ", TX"} for a in SITE.get("areas", [])]}
+          "areaServed": [{"@type": "City", "name": a + ", TX"} for a in SITE.get("areas", [])]}
     d = SITE.get("domain")
     if d:
         ld.update(logo=d + "/logo-512.png", image=d + "/logo-512.png", url=d)
