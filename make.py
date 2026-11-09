@@ -64,7 +64,7 @@ def prerender(body):
         body = re.sub(r'(data-tel\b[^>]*?)href="#offer"', r'\1href="%s"' % tel, body)
         body = re.sub(r'href="#offer"([^>]*?\bdata-tel\b)', r'href="%s"\1' % tel, body)
     if SITE.get("ownerPhoto"):
-        img = '<img src="%s" alt="Photo of %s" width="800" height="1000" loading="lazy">' % (
+        img = '<img src="%s" alt="Photo of %s" width="800" height="1200" loading="lazy">' % (
             esc(SITE["ownerPhoto"]), esc(SITE.get("owner") or "the owner"))
         body = re.sub(r'(<div class="photo" data-photo="ownerPhoto"[^>]*>)(</div>)', r"\1" + img + r"\2", body)
     if SITE.get("story"):

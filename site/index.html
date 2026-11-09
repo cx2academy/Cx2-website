@@ -156,6 +156,9 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 /* owner */
 .owner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,72px);align-items:center}
 .owner .photo{aspect-ratio:4/5}
+/* owner cutout: transparent background, the person lifted off the page with a soft shadow; the clip keeps the shadow off the photo's cropped bottom and right edges */
+.owner .photo:not(.empty){aspect-ratio:2/3;background:none;border-radius:0;overflow:visible}
+.owner .photo:not(.empty) img{object-fit:contain;filter:drop-shadow(0 16px 22px rgba(19,36,58,.28)) drop-shadow(0 3px 6px rgba(19,36,58,.16));clip-path:inset(-80px 0 0 -80px)}
 .owner-copy{display:grid;gap:18px}
 .owner-copy p{font-size:1.1rem;color:var(--muted);max-width:60ch}
 .story{display:grid;gap:14px}
@@ -446,7 +449,7 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
 </div></section>
 
 <section class="sec" id="about"><div class="wrap owner">
-  <div class="photo" data-photo="ownerPhoto" data-label="Your photo: a friendly, well-lit picture of you"><img src="owner.jpg" alt="Photo of Cooper" width="800" height="1000" loading="lazy"></div>
+  <div class="photo" data-photo="ownerPhoto" data-label="Your photo: a friendly, well-lit picture of you"><img src="owner.webp" alt="Photo of Cooper" width="800" height="1200" loading="lazy"></div>
   <div class="owner-copy">
     <h2>Meet <span data-fill="owner">Cooper</span>, the owner</h2>
     <div class="story" id="story"><p>I grew up in Lufkin, in deep East Texas, and started in real estate when I was 16. My first deal was with a family in Dallas who had inherited a house that needed a lot of work and came with tens of thousands of dollars in back taxes they couldn&#x27;t pay.</p><p>I connected them with a cash buyer I knew who was looking for a house to restore in that neighborhood. We set it up so the back taxes were paid off at closing, the family walked away with the amount they needed, and the buyer brought the house back to life. Everyone came out ahead, and that&#x27;s when I knew this was what I wanted to do.</p><p>At 18 I moved to Houston and started Cx2 Homebuyers to help homeowners in situations a regular listing can&#x27;t fix. I connect them with cash buyers I&#x27;ve built real relationships with, and I work to get them the best cash offer I can.</p><p>Cx2 is a faith-based business. Too often in real estate, people and their homes get treated like numbers on a spreadsheet. I see a neighbor who needs help. My goal is to be honest with you, treat you with respect, and help you get from a hard situation to a better one. I&#x27;m glad to help every homeowner, whatever their background or beliefs.</p></div>
@@ -573,7 +576,7 @@ var SITE = {
     "Cx2 is a faith-based business. Too often in real estate, people and their homes get treated like numbers on a spreadsheet. I see a neighbor who needs help. My goal is to be honest with you, treat you with respect, and help you get from a hard situation to a better one. I'm glad to help every homeowner, whatever their background or beliefs."
   ],
   dealsClosed: "",             // e.g. "5" (real number only; hidden when blank)
-  ownerPhoto: "owner.jpg",
+  ownerPhoto: "owner.webp",
   googleUrl: "",               // your Google Business Profile link
   domain: "https://cx2homebuyers.com",
   areas: ["Houston","Pasadena","Pearland","Missouri City","Sugar Land","Stafford","Bellaire","Katy","Cypress","Jersey Village","Spring","Humble","Atascocita","Kingwood","Baytown","Channelview","Deer Park","La Porte","League City","Friendswood","Webster","Clear Lake","Alvin","Manvel","Dickinson","Texas City","Richmond","Rosenberg","Tomball","The Woodlands"],
