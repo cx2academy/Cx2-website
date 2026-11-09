@@ -13,7 +13,7 @@ LON0,LON1,LAT0,LAT1=-96.45,-94.40,28.95,30.62
 STEP=0.012
 lons=np.arange(LON0-0.1,LON1+0.1,STEP); lats=np.arange(LAT0-0.1,LAT1+0.1,STEP)
 grid=np.array([[drive.tt(x,y) for x in lons] for y in lats])
-grid=gaussian_filter(grid,1.2)
+grid=gaussian_filter(grid,2.2)
 cs=measure.find_contours(grid,60.0)
 c=max(cs,key=len)
 ring=[(lons[0]+j*STEP, lats[0]+i*STEP) for i,j in c]
@@ -41,13 +41,41 @@ towns=[("Conroe",30.312,-95.456,"r",""),("The Woodlands",30.166,-95.461,"r",""),
 ("Pearland",29.564,-95.286,"r",""),("Pasadena",29.691,-95.209,"r","m"),("Baytown",29.736,-94.977,"r",""),("League City",29.507,-95.095,"r",""),
 ("Texas City",29.384,-94.903,"l","m"),("Galveston",29.301,-94.798,"r",""),("Angleton",29.169,-95.432,"l","m"),
 ("Cleveland",30.341,-95.086,"r","m"),("Dayton",30.047,-94.885,"r","m"),("Humble",29.999,-95.262,"r","m")]
+from shapely.geometry import Polygon, shape, LineString, MultiLineString
+from shapely.ops import unary_union
+def chaikin(pts,n=3):
+    for _ in range(n):
+        q=[]
+        for i in range(len(pts)):
+            p0=pts[i];p1=pts[(i+1)%len(pts)]
+            q+= [(0.75*p0[0]+0.25*p1[0],0.75*p0[1]+0.25*p1[1]),(0.25*p0[0]+0.75*p1[0],0.25*p0[1]+0.75*p1[1])]
+        pts=q
+    return pts
+A=Polygon(ring).buffer(0.06).buffer(-0.10).buffer(0.04)
+A=Polygon(chaikin(list(A.exterior.coords)[:-1],3)).simplify(0.002)
+LAND=unary_union([shape(f['geometry']) for f in cty]).buffer(0)
+FILL=A.intersection(LAND)
+EDGE=A.exterior.intersection(LAND.buffer(0.006))
+parts=[g for g in getattr(EDGE,'geoms',[EDGE]) if g.length>0.15]
+def poly_d(g):
+    out=''
+    for p in getattr(g,'geoms',[g]):
+        if p.geom_type!='Polygon': continue
+        for r in [p.exterior]+list(p.interiors): out+=d_ring(list(r.coords)[:-1],0.6)
+    return out
+def line_d(ls):
+    pts=[];last=None
+    for lon,lat in ls.coords:
+        x,y=P(lon,lat);q=(round(x,1),round(y,1))
+        if last and abs(q[0]-last[0])<0.6 and abs(q[1]-last[1])<0.6: continue
+        pts.append(q);last=q
+    return 'M'+' '.join('%g %g'%p for p in pts)
 o=[f'<svg class="area-map" viewBox="0 0 {W} {H}" role="img" aria-labelledby="mapTitle"><title id="mapTitle">Map of the area we buy in: about a one-hour drive from central Houston, reaching Conroe, Katy, Sugar Land, Baytown and Galveston</title>',
-   f'<defs><clipPath id="landClip"><path d="{land}"/></clipPath></defs>',
    f'<rect width="{W}" height="{H}" fill="#D9E8F5"/>',
    '<g fill="#F4F6F9" stroke="#DCE3EC" stroke-width="1">'+''.join(f'<path d="{d_ring(r,1.2)}"/>' for f in cty for r in rings(f))+'</g>',
-   f'<g clip-path="url(#landClip)"><path d="{area}" fill="#FFFFFF" stroke="#BF4A08" stroke-width="3.5" stroke-linejoin="round"/>'
-   +'<g fill="none" stroke="#DCE3EC" stroke-width="1">'+''.join(f'<path d="{d_ring(r,1.2)}"/>' for f in cty for r in rings(f))+'</g>'
-   +f'<path d="{area}" fill="none" stroke="#BF4A08" stroke-width="3.5" stroke-linejoin="round"/></g>']
+   f'<path d="{poly_d(FILL)}" fill="#FFFFFF" fill-rule="evenodd"/>',
+   f'<path d="{poly_d(FILL)}" fill="none" stroke="#9FB3D1" stroke-width="1.2" stroke-linejoin="round"/>',
+   '<g fill="none" stroke="#BF4A08" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">'+''.join(f'<path d="{line_d(g)}"/>' for g in parts)+'</g>']
 ux,uy=P(-95.3422,29.7199)
 o.append(f'<circle cx="{ux:.1f}" cy="{uy:.1f}" r="14" fill="#152F70" opacity=".14"/><circle cx="{ux:.1f}" cy="{uy:.1f}" r="7" fill="#152F70" stroke="#fff" stroke-width="2.5"/><text x="{ux+14:.1f}" y="{uy-12:.1f}" class="big">Houston</text>')
 for name,lat,lon,side,minor in towns:
