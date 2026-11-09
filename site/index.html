@@ -156,7 +156,7 @@ input:focus,select:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 
 /* owner */
 .owner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,72px);align-items:center}
 .owner .photo{aspect-ratio:4/5}
-/* owner cutout: transparent background, the person lifted off the page with a soft shadow. The image itself fades out at its cropped bottom and right edges, so the shadow fades with it and never ends in a hard line. */
+/* owner cutout: transparent background, the person lifted off the page with a soft shadow. Nothing clips the shadow, so it has no hard edges. */
 .owner .photo:not(.empty){aspect-ratio:2/3;background:none;border-radius:0;overflow:visible}
 .owner .photo:not(.empty) img{object-fit:contain;filter:drop-shadow(0 16px 22px rgba(19,36,58,.28)) drop-shadow(0 3px 6px rgba(19,36,58,.16))}
 .owner-copy{display:grid;gap:18px}
