@@ -71,8 +71,7 @@ def prerender(body):
         paras = "".join("<p>%s</p>" % esc(t) for t in SITE["story"])
         body = body.replace('<div class="story" id="story"></div>', '<div class="story" id="story">%s</div>' % paras)
     if SITE.get("areas"):
-        pin = '<svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>'
-        lis = "".join("<li>%s%s</li>" % (pin, esc(a)) for a in SITE["areas"])
+        lis = "".join("<li>%s</li>" % esc(a) for a in SITE["areas"])
         body = body.replace('<ul class="areas" id="areaList"></ul>', '<ul class="areas" id="areaList">%s</ul>' % lis)
     if SITE.get("dealsClosed"):
         body = body.replace('<div class="stat" id="dealStat" hidden>', '<div class="stat" id="dealStat">')
@@ -83,7 +82,8 @@ def prerender(body):
 def business_data():
     ld = {"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Cx2 Homebuyers LLC",
           "description": "Local, owner-run Houston company that makes as-is cash offers on houses in Greater Houston.",
-          "areaServed": [{"@type": "City", "name": a + ", TX"} for a in SITE.get("areas", [])]}
+          "areaServed": [{"@type": "AdministrativeArea", "name": c + " County, TX"} for c in SITE.get("counties", [])]
+                        + [{"@type": "City", "name": a + ", TX"} for a in SITE.get("areas", [])]}
     d = SITE.get("domain")
     if d:
         ld.update(logo=d + "/logo-512.png", image=d + "/logo-512.png", url=d)
