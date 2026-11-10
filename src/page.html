@@ -360,9 +360,11 @@ footer .contact .i{width:16px;height:16px;color:#FF9A5A}
         <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Need to move fast</li>
       </ul>
       <div class="hero-form">
-        <form name="offer" method="POST" data-netlify="true" netlify-honeypot="company" id="offerForm" novalidate>
-          <input type="hidden" name="form-name" value="offer">
-          <p hidden><label>Leave this empty<input name="company" id="f-company" tabindex="-1" autocomplete="off"></label></p>
+        <form name="offer" method="POST" action="https://api.web3forms.com/submit" id="offerForm" novalidate>
+          <input type="hidden" name="access_key" id="f-key" value="">
+          <input type="hidden" name="subject" value="New cash offer request from the Cx2 website">
+          <input type="hidden" name="from_name" value="Cx2 Homebuyers website">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
           <div class="step" id="step1">
             <label class="lead" for="f-address">Enter your address to get your no-obligation cash offer:</label>
             <div class="addr-row">
@@ -628,6 +630,7 @@ var SITE = {
   owner: "Cooper",
   phone: "(346) 517-2534",
   email: "contact@cx2homebuyers.com",
+  formKey: "",                 // Web3Forms access key (public by design); offers are emailed to the address it was created with
   hours: "Mon to Sat, 9am to 7pm",
   offerSpeed: "Offer usually within a day or two",
   story: [                     // one string per paragraph
@@ -734,8 +737,9 @@ var PH={owner:"Your name",phone:"Your phone",email:"Your email",hours:"Your hour
     if(s2.hidden){toStep2();return;}
     if(!name.value.trim()||!phone.value.trim()){(name.value.trim()?phone:name).reportValidity();return;}
     if(!SITE.live){f.hidden=true;t.hidden=false;t.insertAdjacentHTML("afterbegin","<p><strong>Preview only: nothing was sent.</strong></p>");return;}
-    fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()})
-      .then(function(r){if(!r.ok)throw 0;f.hidden=true;t.hidden=false;})
+    var key=document.getElementById("f-key");if(!key.value)key.value=SITE.formKey||"";
+    fetch(f.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(f)})
+      .then(function(r){return r.json();}).then(function(j){if(!j||!j.success)throw 0;f.hidden=true;t.hidden=false;})
       .catch(function(){t.hidden=false;t.textContent="That didn't go through. Please call or text "+(SITE.phone||"us")+".";});});
   document.getElementById("finalForm").addEventListener("submit",function(e){e.preventDefault();
     addr.value=document.getElementById("f-address-2").value;document.getElementById("offer").scrollIntoView({behavior:"smooth",block:"center"});

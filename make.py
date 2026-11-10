@@ -1,7 +1,7 @@
 """Builds the website from src/page.html.
 
   python3 make.py   ->  body.html        (preview page for Claude)
-                        site/index.html  (the real website: drag the `site` folder onto Netlify)
+                        site/index.html  (the real website: Cloudflare Pages publishes the `site` folder)
                         site/privacy.html, site/terms.html  (from src/legal/)
 
 Edit your details in the SITE block near the bottom of src/page.html, then run this again.
@@ -73,6 +73,9 @@ def prerender(body):
     if SITE.get("areas"):
         lis = "".join("<li>%s</li>" % esc(a) for a in SITE["areas"])
         body = body.replace('<ul class="areas" id="areaList"></ul>', '<ul class="areas" id="areaList">%s</ul>' % lis)
+    if SITE.get("formKey"):
+        body = body.replace('<input type="hidden" name="access_key" id="f-key" value="">',
+                            '<input type="hidden" name="access_key" id="f-key" value="%s">' % esc(SITE["formKey"]))
     if SITE.get("dealsClosed"):
         body = body.replace('<div class="stat" id="dealStat" hidden>', '<div class="stat" id="dealStat">')
     body = re.sub(r'<div class="preview" id="previewBar">.*?</div></div>\n?', "", body, count=1, flags=re.S)
